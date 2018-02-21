@@ -132,8 +132,13 @@ body {
 </style>
 
 <script scr="https://cs.stanford.edu/people/karpathy/recurrentjs/src/vis.js"></script>
-
-<script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+<script> 
+$(function() {
+    menace_js()
+});
+function menace_js(){
 const compose = (a, b) => x => a(b(x));
 const reverse = array => [...array].reverse();
 
@@ -659,6 +664,7 @@ function get_canonical(str, _s) {
     }
   }
   throw "no matching transformation found"
+}
 }
 
 <script>
