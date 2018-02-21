@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id='top'>
+  Bus Journey Planner
+</div>
+<div id='sub'>
+
+</div>
+<br>
+<div id='weather'>
+
+</div>
+<br>
+
+<table id='board'>
+</table>
+
+<div id='message'>
+
+</div>
+
+<style>
+body {
+  background-color: Gainsboro;
+  font-family: "Helvetica", Times, serif;
+}
+
+#top {
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+  font-family: "Helvetica", Times, serif;
+}
+
+#sub,
+#weather {
+  color: DimGray;
+  font-size: 15px;
+  font-family: "Helvetica", Times, serif;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: right;
+  border-bottom: 1px solid #FFF;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+//https://blog.tfl.gov.uk/2015/12/07/unified-api-part-5-aot-arrivals-of-things/
+
+var base_url = 'https://api.tfl.gov.uk/StopPoint/490010878C/';
+var arrivals_url = base_url + 'arrivals/';
+
+$.getJSON(base_url, get_stop_name);
+$.getJSON(arrivals_url, get_top_three);
+
+var table_ob = [];
+
+var destination_stop = "Elephant & Castle / New Kent Road";
+
+var _busses = {
+  '363': 1,
+  '63': 1,
+  'N63': 1
+};
+
+function get_stop_name(data) {
+  $('#sub').append(data.commonName + " to " + destination_stop);
+
+  var loc = {
+    lat: data.lat,
+    lon: data.lon
+  }
+  var weather_url = `https://api.openweathermap.org/data/2.5/weather?lat=${loc.lat}&lon=${loc.lon}&appid=bbc9eabd83dcc562c6bbd873163fb4ca`
+  $.getJSON(weather_url, get_weather_data);
+}
+
+function get_weather_data(data) {
+  var kelvin = 273.16;
+  var temp = (data.main.temp - kelvin).toFixed(1);
+  var weather_type = data.weather.map(x => x.main).join(", ");
+
+  var str = temp + "°C " + weather_type
+
+  $('#weather').append(str);
+}
+
+function get_top_three(data) {
+  data = data.filter(function(bus) {
+    if (!bus.lineName) return false
+    return (bus.lineName in _busses)
+  });
+
+  data = data.sort(function(a, b) {
+    return a.timeToStation - b.timeToStation
+  });
+
+  let closest_busses = data.slice(0, 3);
+
+  var str_arr = [];
+
+  if (closest_busses.length === 0)
+    str_arr.push('no busses :(');
+
+  closest_busses.forEach(function(closest_bus, i) {
+
+    table_ob.push({
+      "Order": ++i + ")",
+      "Bus": closest_bus.lineName,
+      "Due": seconds_to_minutes(closest_bus.timeToStation),
+      "Destination": closest_bus.destinationName,
+      "Duration": ""
+    });
+  });
+
+  closest_busses.forEach(function(c, i) {
+    var bus_id = c.vehicleId;
+    var bus_url = `https://api.tfl.gov.uk/Vehicle/${bus_id}/Arrivals`;
+    $.getJSON(bus_url, function(data) {
+      callback_wrapper(data, i)
+    });
+  });
+}
+
+function callback_wrapper(data, row) {
+  get_journey_time(data, row);
+}
+
+function get_journey_time(data, i) {
+  var arrival_stop;
+  for (var row in data) {
+    if (data[row].stationName === destination_stop) {
+      arrival_stop = data[row];
+    }
+  }
+
+  if (arrival_stop) {
+    table_ob[i].Duration = seconds_to_minutes(arrival_stop.timeToStation)
+
+  } else {
+    table_ob[i].Duration = "--";
+  }
+  update_table();
+}
+
+function update_table() {
+  $("#board").empty();
+  $("#board").append(`<tr><th></th><th>Bus</th><th>Due</th><th>Destination</th><th>Arrive in</th></tr>`);
+
+  table_ob.forEach(function(row) {
+    $("#board").append(`<tr><td>${row.Order}</td><td>${row.Bus}</td><td>${row.Due}</td><td>${row.Destination}</td><td>${row.Duration}</td></tr>`);
+  });
+}
+
+var seconds_to_minutes = (s) => {
+  return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s
+  //https://stackoverflow.com/questions/3733227/javascript-seconds-to-minutes-and-seconds
+}
+</script>
+
+</body>
+</html>
