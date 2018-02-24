@@ -74,7 +74,7 @@ function getParameterByName(name,def) {
 //read params from url
 
 var stop_id = getParameterByName('stop_id', '490010878C');
-var busses = (function(str){
+var _busses = (function(str){
   var arr = str.split("_");
   var t = {};
   arr.forEach(function(bus){
