@@ -47,7 +47,7 @@ function get_weather_data(data) {
 function get_top_three(data) {
   data = data.filter(function(bus) {
     if (!bus.lineName) return false
-    return (bus.lineName in _busses)
+    return (bus.lineName in busses)
   });
   data = data.sort(function(a, b) {
     return a.timeToStation - b.timeToStation
