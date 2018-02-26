@@ -1,1 +1,30 @@
 
+body {
+  background-color: Gainsboro;
+  font-family: "Helvetica", Times, serif;
+}
+#top {
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+  font-family: "Helvetica", Times, serif;
+}
+#sub,
+#weather {
+  color: DimGray;
+  font-size: 15px;
+  font-family: "Helvetica", Times, serif;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+th {
+  font-weight: bold;
+}
+th,
+td {
+  padding: 15px;
+  text-align: right;
+  border-bottom: 1px solid #FFF;
+}
