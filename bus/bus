@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id='top'>
+  Bus Journey Planner
+</div>
+<div id='sub'>
+
+</div>
+<br>
+<div id='weather'>
+
+</div>
+<br>
+
+<table id='board'>
+</table>
+
+<div id='message'>
+
+</div>
+
+<style>
+body {
+  background-color: Gainsboro;
+  font-family: "Helvetica", Times, serif;
+}
+#top {
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+  font-family: "Helvetica", Times, serif;
+}
+#sub,
+#weather {
+  color: DimGray;
+  font-size: 15px;
+  font-family: "Helvetica", Times, serif;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+th {
+  font-weight: bold;
+}
+th,
+td {
+  padding: 15px;
+  text-align: right;
+  border-bottom: 1px solid #FFF;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="bus.js"></script>
+
+</body>
+</html>
