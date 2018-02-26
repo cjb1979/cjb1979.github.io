@@ -91,11 +91,12 @@ function get_journey_time(data, i) {
   update_table();
 }
 function update_table() {
-  $("#board").empty();
-  $("#board").append(`<tr><th></th><th>Bus</th><th>Due</th><th>Destination</th><th>Arrive in</th></tr>`);
+  $("#table").empty();
+  $("#table").append(`<thead class = "thead-light"><tr><th scope = "col">#</th><th scope = "col">Bus</th><th scope = "col">Due</th><th scope = "col">Destination</th><th scope = "col">Arrive in</th></tr></thead><tbody>`);
   table_ob.forEach(function(row) {
-    $("#board").append(`<tr><td>${row.Order}</td><td>${row.Bus}</td><td>${row.Due}</td><td>${row.Destination}</td><td>${row.Duration}</td></tr>`);
+    $("#table").append(`<tr><th scope="row">${row.Order}</th><td>${row.Bus}</td><td>${row.Due}</td><td>${row.Destination}</td><td>${row.Duration}</td></tr>`);
   });
+  $("#table").append("</tbody>");
 }
 var seconds_to_minutes = (s) => {
   return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s
