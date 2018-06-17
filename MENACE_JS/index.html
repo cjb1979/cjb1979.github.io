@@ -1,0 +1,119 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CJ Boyd</title>
+    
+    <!--<link rel="stylesheet" type="text/css" href="/global/custom.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="menace.js"></script>
+
+    <!-- Bootstrap core CSS
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    -->
+    
+    <!-- Custom styles for this template -->
+    <link href="/global/simple-sidebar.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <!-- Loaded in with $().load-->
+        </div>
+       
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>MENACE.js</h1>
+                <p></p>
+ <div id="status">Training...</div>
+  <canvas id="cvs" width="150" height="150"></canvas><canvas id="pplgraph"></canvas>
+  <div class="den">
+  Next game, play as: <select id = team_select>
+  <option value="x">x</option>
+  <option value="o">o</option>
+</select><p>
+
+</p>
+<p>
+Set training rewards:
+</p><div class="text">
+      
+      <textarea class='input' id="x_input">
+rewards['x']['win'] = 2; rewards['x']['lose'] = -3; rewards['x']['draw'] = 4; rewards['x']['initial'] = 20;
+      </textarea>
+      <textarea class='input' id="o_input">
+rewards['o']['win'] = 2; rewards['o']['lose'] = -3; rewards['o']['draw'] = 4; rewards['o']['initial'] = 20;
+      </textarea>
+      <p>
+
+      </p>
+      Training iterations: <input id="iters" type="number" value="1500">
+      <button type=button id=relearn>Re-learn</button>
+      <p id="header_exp">What's happening?</p>
+      <p>1) Firstly, it generates all unique, valid naughts and crosses grid states. Unique means unique under transformation - for example, an X in the top left can be tranformed (rotated) so that it is in the bottom right, so these two states are considered
+        the same.</p>
+      <p>
+        2) Taking a move means changing from one game state to another game state.</p>
+      <p><p>
+        3) Each game state is given a 'matchbox': an object contains 'beads', indicating what moves are allowed. Each bead represents a valid move (i.e. a change to another game state). At the start, all matchboxes are filled with an equal number of beads, for each valid move.
+      </p>
+        4) When a move is chosen by the AI, it looks at all the available 'beads' and randomly chooses one. At the start, because there are equally numbers of beads, the AI will chose any valid move. However, as training continues, the numbers of available beads
+        will change, which means the moves the AI takes will change. If the matchbox is totally empty - i.e. it has no available moves, the AI will randomly pick an open tile to play. (This avoids it getting 'stuck').
+      </p>
+      <p>
+      5) The AI then plays many games against another copy. For each game. each move the AI takes is noted. When AI wins, the moves it took are rewarded, and if it loses, penalised. </p>
+      <p>6) Rewarding is done by adding in more beads of the corresponding move to each
+        matchbox that was opened during the match. Penalisation is the opposite, beads that were chosen when the AI lost are removed. This means over successive games, the matchboxes are filled with beads that generally cause the AI to win, meaning the
+        AI is much more likely to pick moves that work. Additionally, completing the grid without either player winning (tieing) is rewarded, because perfect gameplay from each team leads to a tie.
+
+      </p>
+      <p>
+      7) The graph charts 'certainty': a rough indication of how much learning has happened.  It is the the move with the largest amount of beads, divided by the average amount of beads for different moves, across all matchboxes.  Certainty trends upwards with more iterations - although it does not mean that the AI is learning anything meaningful
+      </p>
+      <p>
+        Not my idea! Inspired by the below:
+      </p>
+
+    </div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/R9c-_neaxeU" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+
+
+
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+        
+      $(function() {
+            $("#sidebar-wrapper").load("/global/sidebar.html");
+      });
+    </script>
+
+</body>
+
+</html>
