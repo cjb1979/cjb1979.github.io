@@ -1,3 +1,5 @@
+function menace(){
+
 const compose = (a, b) => x => a(b(x));
 const reverse = array => [...array].reverse();
 
@@ -523,4 +525,6 @@ function get_canonical(str, _s) {
     }
   }
   throw "no matching transformation found"
+}
+  
 }
