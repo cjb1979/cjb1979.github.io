@@ -99,7 +99,7 @@ paths['x'] = function(x, y, w) {
 paths['_'] = function() {};
 paths['o'] = function(x, y, w) {
   b_ctx.beginPath();
-  b_ctx.strokeStyle = "#FFFFFF";
+  b_ctx.strokeStyle = "#696969";
   var b = w / 5;
   x += (w / 2);
   y += (w / 2);
