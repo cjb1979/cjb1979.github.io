@@ -22,7 +22,7 @@ var busses = (function(str){
     t[bus] = 1;
   });
   return t;
-})(getParameterByName('busses', '363_63_n63'));
+})(getParameterByName('busses', '363_63_N63'));
 
 var destination_stop = unescape(getParameterByName('destination', 'Elephant%20%26%20Castle%20/%20New%20Kent%20Road'));
 
