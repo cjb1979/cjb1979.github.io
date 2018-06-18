@@ -1,6 +1,8 @@
 
-    
-    function getParameterByName(name,def) {
+function bus(){
+
+
+function getParameterByName(name,def) {
     var url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
     var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
@@ -104,4 +106,4 @@ var seconds_to_minutes = (s) => {
   return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s
   //https://stackoverflow.com/questions/3733227/javascript-seconds-to-minutes-and-seconds
 }
-
+}
