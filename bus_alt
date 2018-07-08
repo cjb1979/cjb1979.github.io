@@ -52,9 +52,18 @@
     <!-- /#wrapper -->
 
     <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
+
+        
+        
+        
+    function menu_toggle(){
+    //    e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+    }
+        
+       
+    $("#menu-toggle").click(function(e) {
+       menu_toggle()
     });
         
       $(function() {
