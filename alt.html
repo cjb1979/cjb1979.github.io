@@ -56,24 +56,24 @@
     var toggled = false;
     $(document).mousemove(function(e){
         if (e.X < window.innerWidth *0.01 && toggled === false){
-           menu_toggle()
+           menu_toggle(e)
             toggled = true;
            
         } else if (e.X >=  window.innerWidth *0.01 && toggled === true){
-           menu_toggle();
+           menu_toggle(e);
            toggled = false;
         }
      //   $('#status').html(e.pageX +', '+ e.pageY);
     });    
         
-    function menu_toggle(){
+    function menu_toggle(e){
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     }
         
        
     $("#menu-toggle").click(function(e) {
-       menu_toggle()
+       menu_toggle(e)
     });
         
       $(function() {
