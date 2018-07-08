@@ -53,9 +53,27 @@
     <!-- /#wrapper -->
 
     <script>
-    $("#menu-toggle").click(function(e) {
+    var toggled = false;
+    $(document).mousemove(function(e){
+        if (e.X < window.innerWidth *0.01 && toggled === false){
+           menu_toggle()
+            toggled = true;
+           
+        } else if (e.X >=  window.innerWidth *0.01 && toggled === true){
+           menu_toggle();
+           toggled = false;
+        }
+     //   $('#status').html(e.pageX +', '+ e.pageY);
+    });    
+        
+    function menu_toggle(){
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+    }
+        
+       
+    $("#menu-toggle").click(function(e) {
+       menu_toggle()
     });
         
       $(function() {
