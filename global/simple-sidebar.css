@@ -128,3 +128,9 @@ body {
     font-size: 36px;
     margin-left: 50px;
 }
+
+.sidebar-nav .social-buttons {
+  text-indent: 20px;
+  line-height: 40px;
+}
+
