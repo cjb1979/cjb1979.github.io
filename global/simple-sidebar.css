@@ -121,7 +121,7 @@ body {
   }
 }
 
-.sidebar .closebtn {
+.sidebar_nav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
