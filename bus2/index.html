@@ -71,16 +71,22 @@ Use the URL parameters to edit your journey, and bookmark
     </div>
     <!-- /#wrapper -->
 
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
+        <script>
+        
+    function menu_toggle(){
+    //    e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+    }
+        
+       
+    $("#menu-toggle").click(function(e) {
+       menu_toggle()
     });
         
       $(function() {
             $("#sidebar-wrapper").load("/global/sidebar.html");
       });
-        
+
       $(function() {
             bus();
       });
