@@ -106,15 +106,26 @@ rewards['o']['win'] = 2; rewards['o']['lose'] = -3; rewards['o']['draw'] = 4; re
     </div>
     <!-- /#wrapper -->
 
+
     <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
+
+        
+        
+        
+    function menu_toggle(){
+    //    e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+    }
+        
+       
+    $("#menu-toggle").click(function(e) {
+       menu_toggle()
     });
         
       $(function() {
             $("#sidebar-wrapper").load("/global/sidebar.html");
       });
+
         
       $(function() {
             menace();
