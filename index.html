@@ -39,16 +39,16 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="buttonmenu"><a href="#menu-toggle" class="btn btn-default" id="menu-toggle">></a></div>
+        <div id="buttonmenu"><a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><h2>></h2></a></div>
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <h1>CJ Boyd</h1>
                 <p>Digital Marketer, JS programmer, AdWords automater, amateur web designer & AI enthusiast</p>
                 <p>Check out some of my AI-inspired projects <a href="/projects">here</a></p>
               <!--  <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a> -->
-                <br>
+            
                 <p>I'm designing this website from the ground up.</p>
-                <br>
+               
                 <img src="/img/cjb.jpg" class="mx-auto d-block" alt="CJ Boyd">
             </div>
         </div>
@@ -63,9 +63,9 @@
     function menu_toggle(e){
         $("#wrapper").toggleClass("toggled");
         if ($("#menu-toggle").text() === ">") {
-           $("#menu-toggle").text("<");
+           $("#menu-toggle").html("<h2><</h2>");
         } else {
-           $("#menu-toggle").text(">");
+           $("#menu-toggle").text("<h2>></h2>");
         }
     }
         
