@@ -5,6 +5,12 @@ table{
   font-size: 25px;
 }
 
+#buttonmenu {
+    position:absolute; 
+    top:5px; 
+    left:5px;
+}
+
 html {
   height: 100%;
   box-sizing: border-box;
