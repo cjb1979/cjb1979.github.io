@@ -115,8 +115,13 @@
 
   </p>
 
-  <div id="rich">
-<p><strong>How does it work?</strong><br /> <br /><span style="font-size: 10pt;"> This is a simple neural network binary classifier for text. It distinguishes between the place names of two places/languages.</span> <br /> <br /> <strong>Feature Extraction - Character Vectorisation</strong></p>
+ <!-- <div id="rich">  -->
+<h3>How does it work?</h3>
+    <p></p>
+ This is a simple neural network binary classifier for text. It distinguishes between the place names of two places/languages.
+     <p></p>
+    <h3>Feature Extraction - Character Vectorisation</h3>
+     <p></p>
 <p><span style="font-size: 10pt;">I used two different techniques to vectorise the text.&nbsp; Text itself is not directly usable by a neural network, instead the text is 'vectorised' - turned into a multi-dimensional data type.</span></p>
 <p><span style="font-size: 10pt;">E.g. in an alphabet with only five letters, for the word 'bed' we would create 15 (5 for the size of the alphabet x 3 letters in the word), and place a '1' in the second column to indicated the 'B'.</span></p>
 <table style="height: 44px;" width="223">
@@ -196,20 +201,28 @@
 </tr>
 </tbody>
 </table>
-<p><strong> Feature Extraction - Other features</strong></p>
+    
+    
+     <p></p>
+<h3>Feature Extraction - Other features</h3>
+<p></p>
 <p><span style="font-size: 10pt;">I also wanted to extract some of the structure of the words.&nbsp; Using count vectorisation, the words 'able' and 'bale' look identical.&nbsp; I found that using regular expressions, it is possible to get a rough idea of the number of syllables in a word.&nbsp; It's not exact: it may count 'bale' as having two syllables, but it was generally close.&nbsp; The syllable count by itself was not good enough because it did not encode the 'density' of syllables.&nbsp; So the word length divided by syllables works.</span></p>
 <p><span style="font-size: 10pt;">Finally, I entered one more feature into the model: is the last letter a vowel, with a binary 1 or 0 as the data.</span></p>
-<p><br /> <strong>Neural Network - basics</strong></p>
+
+    <h3>Neural Network - basics</h3>
+     <p></p>
 <p><span style="font-size: 10pt;">I'm not able to describe entirely what a neural network is here.&nbsp;</span></p>
 <p><span style="font-size: 10pt;">The basic idea is that data is entered into the network, iteration by iteration.&nbsp; The data 'flows' through the network, where it is combined together and undergoes relatively simple mathematical procedures.&nbsp; The data then pops out the other side, and this is the prediction.&nbsp; The data is input one 'column' by one, so each datapoint (in this case the 26 letters + other features) is entered one by one.</span></p>
 <p><span style="font-size: 10pt;">The mathematical processes that happen are based on 'weights' - numbers that are multiplied with the input data.&nbsp; Initially, the weights are as good as random, and the output from the network is random, and not useful.&nbsp; Data is also passed through nonlinear 'activation' functions, so that the network is able to understand nonlinear relationships between the data points.</span></p>
 <p><span style="font-size: 10pt;">We can compare the output from the network with the 'label' - the actual classification. We take the difference between the output and the actual value, is go back through the network and change the weights, just a little bit, so that next time the output would be slightly closer to the correct answer.&nbsp; Doing this over a lot of iterations over enough data means that the network gets better at generalising - understanding the relationships in the data that cause it to be labelled one way or the other.</span></p>
-<p><strong>Neural Network - setup</strong></p>
+
+     <p></p><h3>Neural Network - setup</h3>
+     <p></p>
 <p><span style="font-size: 10pt;">The neural network code comes from synaptic.js.&nbsp; It is a simple network, with a depth of 26 charachters + the other 2 features.&nbsp; There is one hidden layer of the same depth, with a ReLU activation function (or 'squash', as the synaptic API refers to them as).&nbsp; ReLU means 'Rectified Linear Unit' - but just means that values under 0 are set to 0, and values above zero are unchanged.&nbsp; The final layer has one output with the logistic function - necessary for the binary classification.</span><br /> <br /> <strong>Scoring</strong></p>
 <p>The network is scored by accuracy at the moment.</p>
   </div>
 
-
+  
   <div id="output">
     Results will go here
   </div>
