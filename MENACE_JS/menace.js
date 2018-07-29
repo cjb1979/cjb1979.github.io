@@ -34,10 +34,10 @@ var rand_log = [];
 
 var b_cvs = document.getElementById('cvs');
 var b_ctx = b_cvs.getContext('2d');
-b_cvs.width = 150;
-b_cvs.height = 150;
+b_cvs.width = 300; // 150;
+b_cvs.height = 300; // 150;
 var step_size = b_cvs.width / 3;
-b_ctx.lineWidth = 5;
+b_ctx.lineWidth = 7;
 
 b_cvs.addEventListener('click', click_event)
 
@@ -83,7 +83,8 @@ rewards['x'] = default_rewards
 rewards['o'] = default_rewards
 console.log(rewards)
 var paths = [];
-paths['x'] = function(x, y, w) {
+
+  = function(x, y, w) {
   b_ctx.beginPath();
   b_ctx.strokeStyle = "#000000";
   var b = w / 5;
