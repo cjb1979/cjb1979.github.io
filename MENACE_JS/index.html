@@ -49,7 +49,7 @@
                 <h2>Machine Educable Naughts And Crosses Engine - in JS</h2>
                 <p></p>
  <div id="status">Training...</div>
-  <canvas id="cvs" width="150" height="150"></canvas><canvas id="pplgraph"></canvas>
+  <canvas id="cvs" width="300" height="300"></canvas>
   <div class="den">
   Next game, play as: <select id = team_select>
   <option value="x">x</option>
@@ -78,7 +78,11 @@ rewards['o']['initial'] = 20;
       </p>
       Training iterations: <input id="iters" type="number" value="1500">
       <button type=button id=relearn>Re-learn</button>
-      <p id="header_exp">What's happening?</p>
+      <canvas id="pplgraph"></canvas>
+      <p>
+      </p>
+     <!-- <p id="header_exp">What's happening?</p>  -->
+      <h3>What's happening?</h3>
       <p>1) Firstly, it generates all unique, valid naughts and crosses grid states. Unique means unique under transformation - for example, an X in the top left can be tranformed (rotated) so that it is in the bottom right, so these two states are considered
         the same.</p>
       <p>
@@ -104,7 +108,7 @@ rewards['o']['initial'] = 20;
       </p>
 
     </div>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/R9c-_neaxeU" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    <iframe width="560" height="315" id = "exp_video" src="https://www.youtube.com/embed/R9c-_neaxeU" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
                 <p></p>
       <!--  <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a> -->
