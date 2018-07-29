@@ -39,6 +39,8 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
+                <div id="buttonmenu"><a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><h2>></h2></a></div>
+
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <h1>Bus Time Getter</h1>
@@ -63,7 +65,7 @@ Use the URL parameters to edit your journey, and bookmark
 </p>
 </div>  
                 
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a>
+            <!--    <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a>  -->
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -73,18 +75,38 @@ Use the URL parameters to edit your journey, and bookmark
 
         <script>
         
-    function menu_toggle(){
-    //    e.preventDefault();
+    function menu_toggle(e){
         $("#wrapper").toggleClass("toggled");
+        if ($("#menu-toggle").text() === ">") {
+           $("#menu-toggle").html("<h2><</h2>");
+        } else {
+           $("#menu-toggle").html("<h2>></h2>");
+        }
     }
         
        
-    $("#menu-toggle").click(function(e) {
-       menu_toggle()
+    $("#menu-toggle").click(function() {
+       menu_toggle();
     });
         
       $(function() {
-            $("#sidebar-wrapper").load("/global/sidebar.html");
+        $("#sidebar-wrapper").load("/global/sidebar.html");
+      });    function menu_toggle(e){
+        $("#wrapper").toggleClass("toggled");
+        if ($("#menu-toggle").text() === ">") {
+           $("#menu-toggle").html("<h2><</h2>");
+        } else {
+           $("#menu-toggle").html("<h2>></h2>");
+        }
+    }
+        
+       
+    $("#menu-toggle").click(function() {
+       menu_toggle();
+    });
+        
+      $(function() {
+        $("#sidebar-wrapper").load("/global/sidebar.html");
       });
 
       $(function() {
