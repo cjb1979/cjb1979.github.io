@@ -91,22 +91,6 @@ Use the URL parameters to edit your journey, and bookmark
         
       $(function() {
         $("#sidebar-wrapper").load("/global/sidebar.html");
-      });    function menu_toggle(e){
-        $("#wrapper").toggleClass("toggled");
-        if ($("#menu-toggle").text() === ">") {
-           $("#menu-toggle").html("<h2><</h2>");
-        } else {
-           $("#menu-toggle").html("<h2>></h2>");
-        }
-    }
-        
-       
-    $("#menu-toggle").click(function() {
-       menu_toggle();
-    });
-        
-      $(function() {
-        $("#sidebar-wrapper").load("/global/sidebar.html");
       });
 
       $(function() {
