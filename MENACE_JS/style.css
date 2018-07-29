@@ -9,6 +9,12 @@
   height: 80px;
 }
 
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 #pplgraph {
   margin-right: auto;
   margin-left: auto;
