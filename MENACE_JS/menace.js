@@ -150,6 +150,29 @@ if (is_end_game_state(current_state).winner !== "none") {
 const empty_state = "_________";
 var pplGraph = new Rvis.Graph();
 function get_ai_certainty(s,step){
+  var total = 0;
+  var max_total = 0;
+  for (_s in s){
+    var m = s[_s];
+    var max = 0;
+    for (var i = 0; i < 9; i++){
+      var b = m["_" + i] || 0;
+      max = (b > max) ? b : max;
+      total += b;
+    }
+    max_total += max;
+  }
+  
+  var x =  max_total / total;
+  
+  
+  pplGraph.add(step, x);
+  pplGraph.drawSelf(document.getElementById("pplgraph"));
+  
+  return 
+  
+  /* below - deprecated version */
+   
   var c = [];
   for (_s in s){
     var m = s[_s];
