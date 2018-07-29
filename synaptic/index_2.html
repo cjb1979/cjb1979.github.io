@@ -1,0 +1,253 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CJ Boyd</title>
+    
+    <!--<link rel="stylesheet" type="text/css" href="/global/custom.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="bus.js"></script>
+
+    <!-- Bootstrap core CSS
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    -->
+    
+    <!-- Custom styles for this template -->
+    <link href="/global/simple-sidebar.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <!-- Loaded in with $().load-->
+        </div>
+       
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+                <div id="buttonmenu"><a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><h2>></h2></a></div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>Binary Name Classifier</h1>
+                <h2>Using Synaptic.js</h2>
+
+<div class="container">
+<main>
+
+<div id="status">Training...</div>
+
+<textarea class='input' id="a">Nagoya Toyohashi Okazaki Ichinomiya Seto Handa Kasugai Toyokawa Tsushima Hekinan Kariya Toyota Anjo Nishio Gamagori Inuyama Tokoname Konan Komaki Inazawa Tokai Obu Chita ChiryuChiryu Owariasahi Takahama Iwakura Toyoake Nisshin Tahara Aisai Kiyosu Shinshiro
+  Kitanagoya Yatomi Miyoshi Ama Akita Odate Kazuno Daisen Katagami Kitaakita Oga Yurihonjo Yuzawa Semboku Yokote Nikaho Noshiro Hachinohe Kuroishi Misawa Mutsu Towada Tsugaru Goshogawara Aomori Hirakawa Hirosaki Chiba Choshi Ichikawa Funabashi Tateyama
+  Kisarazu Matsudo Noda Mobara Narita Sakura Togane Narashino Kashiwa Katsuura Ichihara Nagareyama Yachiyo Abiko Kamagaya Kimitsu Futtsu Urayasu Yotsukaido Sodegaura Yachimata Inzai Shiroi Tomisato Kamogawa Asahi Isumi Sosa Minamiboso Katori Sanmu Matsuyama
+  Niihama Shikokuchuo Seiyo Toon Saijo Ozu Imabari Yawatahama Iyo Uwajima Fukui Tsuruga Obama Ono Katsuyama Sabae Awara Echizen Sakai Fukuoka Kurume Omuta Nogata Tagawa Yanagawa Yame Chikugo Okawa Yukuhashi Buzen Nakama Kitakyushu Ogori Chikushino Kasuga
+  Onojo Munakata Dazaifu Koga Fukutsu Ukiha Miyawaka Asakura Iizuka Kama Miyama Itoshima Aizuwakamatsu Fukushima Koriyama Sukagawa SomaSoma Iwaki Tamura Shirakawa Nihonmatsu Minamisoma Date Kitakata Motomiya Gifu Ogaki Takayama Tajimi Seki Nakatsugawa
+  Mino Mizunami Hashima Minokamo Toki Kakamigahara Kani Yamagata Mizuho Hida Motosu Gujo Gero Ena Kaizu Maebashi Takasaki Kiryu Isesaki OtaOta Numata Tatebayashi Fujioka Shibukawa Annaka Tomioka Midori Hiroshima Onomichi Kure Fukuyama Mihara Fuchu Miyoshi
+  Shobara Otake Takehara Higashihiroshima Hatsukaichi Akitakata Etajima Sapporo Hakodate Otaru Asahikawa Muroran Obihiro Yubari Iwamizawa Abashiri Rumoi Tomakomai Wakkanai Bibai Ashibetsu Ebetsu Akabira Monbetsu Mikasa Nemuro Chitose Takikawa Sunagawa
+  Utashinai Fukagawa Furano Noboribetsu Eniwa Date Kitahiroshima Ishikari Shibetsu Kushiro Hokuto Kitami Nayoro Kobe Himeji Amagasaki Akashi Nishinomiya Ashiya Itami Aioi Toyooka Kakogawa AkoAko Takarazuka Miki Takasago Kawanishi Ono Sanda Kasai Sasayama
+  Yabu Tamba Minamiawaji Asago Awaji ShisoShiso Nishiwaki Tatsuno Sumoto KatoKato Mito Hitachi Tsuchiura Yuki Ryugasaki Shimotsuma JosoJoso Hitachiota Takahagi Kitaibaraki Toride Ushiku Tsukuba Hitachinaka Kashima Itako Moriya Hitachiomiya Naka Bando
+  Inashiki Chikusei Kasumigaura Kamisu Namegata Koga Ishioka Sakuragawa Hokota Kasama Tsukubamirai Omitama Kanazawa Nanao Komatsu Suzu Hakui Kahoku Hakusan Nomi Kaga Wajima Morioka Kamaishi Ofunato Rikuzentakata Kitakami Miyako Hachimantai Ichinoseki
+  Tono Hanamaki Ninohe Oshu Kuji Takizawa Takamatsu Marugame Sakaide Zentsuji Sanuki Higashikagawa Mitoyo Kan'onji Kagoshima Kanoya Makurazaki Akune Izumi Ibusuki Minamisatsuma Nishinoomote Tarumizu Satsumasendai Hioki Soo Ichikikushikino Kirishima Shibushi
+  Amami Minamikyushu Isa Aira Yokohama Yokosuka Kawasaki Hiratsuka Kamakura Fujisawa Odawara Chigasaki Zushi Sagamihara Miura Hadano Atsugi Yamato Isehara Ebina Zama Minamiashigara Ayase KochiKochi Sukumo Aki Tosashimizu Susaki Tosa Muroto Nankoku Shimanto
+  Kami Konan Kumamoto Yatsushiro Hitoyoshi Arao Minamata Tamana Yamaga Kikuchi Uto Kamiamakusa Uki Aso Koshi Amakusa Kyoto Fukuchiyama Maizuru Ayabe Tsu Sendai Ishinomaki Shiogama Shiroishi Natori Kakuda Tagajo Iwanuma Tome Kurihara Higashimatsushima
+  Kesennuma Osaki Miyazaki Miyakonojo Nobeoka Nichinan Kobayashi Hyuga Kushima Saito Ebino Matsumoto Okaya Suwa Suzaka Komoro Komagane Omachi Iiyama Iida Chino Shiojiri Nagano Chikuma Tomi Nakano Saku Azumino Ueda Ina Nagasaki Sasebo Shimabara Omura Tsushima
+  Iki Goto Isahaya Saikai Hirado Unzen Matsuura Minamishimabara Nara Yamatotakada Yamatokoriyama Tenri Kashihara Sakurai Gojo Gose Ikoma Kashiba Katsuragi Uda Niigata Nagaoka Kashiwazaki Shibata Ojiya Kamo Mitsuke Murakami Myoko Joetsu Sado Agano Uonuma
+  Minamiuonuma Itoigawa Tokamachi Sanjo Tainai Gosen Tsubame Oita Beppu Nakatsu Hita Saiki Usuki Tsukumi Taketa Bungotakada Usa Bungo-ono Kitsuki Yufu Kunisaki Okayama Kurashiki Tsuyama Tamano Kasaoka Ibara Soja Takahashi Niimi Bizen Setouchi Akaiwa Maniwa
+  Mimasaka Asakuchi Naha Ishigaki Ginowan Urasoe Nago Itoman Okinawa Tomigusuku Uruma Miyakojima Nanjo Osaka Sakai Kishiwada Toyonaka Ikeda Suita Izumiotsu Takatsuki Kaizuka Moriguchi Hirakata Ibaraki Yao Izumisano Tondabayashi Neyagawa Kawachinagano
+  Matsubara Daito Izumi Minoh Kashiwara Habikino Kadoma Settsu Takaishi Fujiidera Higashiosaka Sennan Shijonawate Katano Osakasayama Hannan Tosu Imari Kashima Taku Karatsu Ogi Saga Ureshino Takeo Kanzaki Kawagoe Kawaguchi Gyoda Chichibu Tokorozawa Hanno
+  Kazo Higashimatsuyama Sayama Hanyu Konosu Ageo Soka Koshigaya Warabi Toda Iruma Asaka Shiki Wako Niiza Okegawa Kuki Kitamoto Yashio Fujimi Misato Hasuda Sakado Satte Tsurugashima Hidaka Yoshikawa Saitama Kumagaya Kasukabe Fujimino Fukaya Honjo OtsuOtsu
+  Hikone Omihachiman Kusatsu Moriyama RittoRitto KokaKoka Yasu Konan, Shiga Takashima Higashiomi Maibara Nagahama Matsue Izumo Masuda Yasugi Gotsu Unnan Hamada Oda Shizuoka Hamamatsu Numazu Atami Mishima Fujinomiya ItoIto Shimada Iwata Yaizu Kakegawa
+  Fujieda Gotenba Fukuroi Fuji Shimoda Susono Kosai Izu Omaezaki Kikugawa Izunokuni Makinohara Utsunomiya Ashikaga Tochigi Kanuma Oyama Mooka Otawara Yaita Nasushiobara Sano Sakura, Tochigi Nasukarasuyama Shimotsuke Nikko Tokushima Naruto Komatsushima Anan Yoshinogawa Mima Awa Miyoshi
+</textarea>
+<textarea class='input' id="b">Dinnington South-Benfleet Swanscombe-and-Greenhithe Killamarsh Haverfordwest North-Walsham Grahamston Hemel-Hempstead Newton-Abbot Bellshill Heywood Stonehaven Silloth Aspatria Malpas Millom Wigan Twickenham Alfreton Ambleside Highampton Sleaford Fishguard
+  Thirsk West-Bedlington Turriff Craven-Arms Kendal Eyemouth Wroxham Hoylake Southminster Little-Benton Airdrie Birchwood Callander Holt Caerwys Dagenham Lydney Clackmannan Sturminster-Newton Padstow Crowland Southwold Nefyn Long-Eaton Farnworth Whitefield
+  Oxford Heswall Bridgend Chapel-en-le-Frith Stonehouse Sittingbourne Henley-on-Thames Swindon Egremont Bonnybridge Darlaston Blaenau-Ffestiniog St-Helens Ryde Barnoldswick Windy-Nook Buckie Louth Shoeburyness Laugharne Sheringham Kidsgrove Chesham Neyland
+  Tipton Polegate Swinton Windsor Derry Tenby Coldstream Pateley-Bridge Shotton Bruton Normanton Tonbridge North-Tawton Newton-le-Willows Selsey Craigavon Uppingham Bridgnorth Wombwell Aylesbury Fort-William Sandbach Kenilworth Chickerell Blair-Atholl
+  Dawley Frinton-on-Sea Whitworth Market-Weighton Fareham Gourock Garstang Todmorden Bexley Nottingham Limavady Prescot Musselburgh Fordwich Consett Durham Great-Malvern Oldbury Gravesend Ramsey Uttoxeter Braintree Harrogate Southend-on-Sea Kinghorn Kingston-upon-Thames
+  Bishop's-Stortford Axminster Llandysul Middleton Thorpe-Bay Swadlincote Redruth Castlewellan Thornaby-on-Tees Tavistock Ashby-de-la-Zouch Wath-upon-Dearne Aviemore Burford Greenisland Lincoln Pitlochry Arbroath Diss Highworth Llanfair-Caereinion Fazeley
+  Failsworth Bicester Milngavie Kesgrave Berwick-upon-Tweed Dufftown Warsop Leicester Snodland Wembley Chudleigh Edlington St-Mary-Cray Whitchurch Tottenham Troon Sedgefield Ringwood West-Thurrock Orford Burntisland Great-Brookham Corringham Hawick Wormit
+  Lerwick Llanrwst Crediton South-Shields Maghull Newport Ballycastle Tewkesbury Newhaven Yarmouth Brecon Fairford Gratton Kirriemuir Brigg Wiveliscombe West-Mersea Wolsingham Mallaig Banbury Dolgellau Taunton Monifieth Strabane Bradford-on-Avon Beltchingley
+  Sedgley Chester Dorchester Dovercourt Cromer Thame Chesterfield Harpenden Bromsgrove Pitsea Portadown Bangor Dingwall Topsham Chorleywood Colwyn-Bay Harrow Crewe Tafarnaubach Newmarket Buckhaven Lee-on-the-Solent Dunwich Swanley Grantham Horsham Frodsham
+  Penkridge Biddulph Edmonton Woburn-Sands Caister-on-Sea Mablethorpe-and-Sutton Bungay St-Davids West-Tilbury Steyning Wadebridge Hexham New-Milton Barking Evesham Reepham Linlithgow Alsager Bournemouth Loughton Holland-on-Sea Bromley Bath Lochmaben
+  Rushden Livingston Glossop Egham Blaydon-on-tyne Shepton-Mallet Much-Wenlock Stotfold Pontypridd Tain Sheriff-Hill Cardigan Teignmouth Newtown-St-Boswells Portree Bodmin Ivybridge Penwortham Aberdeen Maidstone Ballymena Moreton-in-Marsh Warwick Montgomery
+  Potton Bridge-of-Allan Romford Atherstone Salcombe Chichester Carterton Wymondham Romsey Arlesey Hunstanton Ullapool Menai-Bridge Brentwood Horley Hoddesdon Forres Llangefni North-Camp Jedburgh Lambourn Penzance Tickhill Harworth-and-Bircotes Sedbergh
+  Bletchley Launceston Amersham Brampton St-Blazey Stalybridge Wednesbury Whitland Prestatyn Rhayader Amlwch Saintfield Bagallit Kinross Broughton Banff-and-Macduff Runcorn Ponteland Borehamwood Maesteg Enniskillen Carnoustie Clay-Cross Duniplace Ipswich
+  Newcastle-under-Lyme Poynton-with-Worth Willington Stockton-on-Tees Burnham-on-Sea Rainhill Hadfield Billericay Market-Rasen Shallcross Collydean Newbury Cheadle Basildon Prettlewell Eastington Coupar-Angus Woodley Boroughbridge Newcastle-upon-Tyne
+  Fordbridge Ashford Newport-Pagnell Donaghadee Newent Penryn Failsworth Wallasey Pembroke Billingham Birmingham Adlington Fakenham Askern Cheadle Lisnaskea Haltwhistle Queensferry Appleby-in-Westmorland Broadstairs Rosyth Dulverton Wakefield Burgh-le-Marsh
+  Llandudno Grimsby Crumlin Bolton Benllech Farnborough Liverpool Lancaster Laurencekirk Bentham Towcester Weymouth Redhill Tynemouth Bedlington Highcliffe Beaminster Redenhall-with-Harleston Cullercoats Fraserburgh Caerphilly Burton-upon-Trent Kirkconnel
+  Brighouse Eaglescliffe Smethwick Merthyr-Tydfil Selkirk Talgarth Carlisle Shefford Llangors Falmouth Thornton-Cleveleys Llantwit-Major Carluke Ormskirk Driffield Merville-Garden-Village Leven Poole Raunds Emsworth Rowley-Regis Formby Dunfermline Clun
+  Hetton New-Alresford Denbigh Fulbourn King's-Lynn Haslingden Swinton Moxley Hendon Whaley-Bridge Kington Bilston Seaford Cannock Chingford Falkland Finchley Cowdenbeath Hereford St-Columb-Major Tisbury Longton Gatehouse-of-Fleet Crowborough Cleckheaton
+  Upton-upon-Severn Hythe Milton-Keynes Stone Staveley Holmfirth Otley North-Berwick Saltburn-by-the-Sea Coseley Longbenton Preesall Castle-Douglas Garnant Halesworth Greater-Willington Crook Ruscote Beverley Ongar Luton Houghton-le-Spring Longtown Tiverton
+  Nantwich Sidmouth Paignton Aldershot Bishop's-Castle Crewkerne Cardiff Wickham Northleach Laindon Ludlow Wednesfield Gorseinon Inveraray Maud Ayr Woodbridge Greenhill Ellon Bala Staines-upon-Thames Markinch Silsden Barnsley Swanage Budleigh-Salterton
+  Kidderminster Armadale South-Cave Dunoon Conwy Huyton Tredegar Coventry Lisburn Saltcoats Brierley-Hill Poulton-le-Fylde Chipping-Sodbury Stamford Invergordon Batley Fordingbridge Hungerford Sheerness Leiston Nairn Coleraine Holywell Stainforth Rothesay
+  Salford Melrose Hayle Netherthorpe Cefnllys Westbury Southampton Whitby Keswick Tullibody Portrush Skelmersdale Beccles Ashington Norton-Radstock Yeadon Beeston Selby Abingdon Barnes Exeter Newburgh Barrhead Deal Newbiggin-by-the-Sea Buntingford Sanquhar
+  Clitheroe Preston Portsmouth Mitcheldean Denny Cricklade Torpoint Manningtree Rochford Kelloholm Kingsteignton Kemnay Maryport Winchcombe Portsoy Aberaeron Skipton Wallingford North-Shields Hebden-Royd Ashby-Woulds Knutsford Porthleven Northfleet Sawbridgeworth
+  Southwark Eccleshall Dronfield-Woodhouse Dunblane Hatfield Verwood Westcliff-on-Sea Southsea Washington Petersfield Penistone Thurso Linlithgow Dundonald Gornal Fenton Ballencrieff Dundee Newport-on-Tay Blackridge Minchinhampton Ellesmere-Port Caistor
+  Hessle Fleetwood Wrexham Bradford Bingham Paisley Ashton-under-Lyne Dronfield Tetbury Earlston Newton-Aycliffe Mossley East-Wemyss Inverbervie Sheffield Gretna Ledbury East-Kilbride Ryton Machynlleth Seaham Meltham Southall Ruthin Bedale Lytham-St-Annes
+  East-Grinstead Whitburn Woking Syston Eastleigh Stenhousemuir Crosby Brierfield High-Wycombe Sandy Buckingham Hatfield Mold Caldicot Norton-on-Derwent Robin-Hood's-Bay Cockermouth Porthcawl Portishead Exmouth Par St-Neots North-Berwick Macclesfield
+  Tunstall Ebbw-Vale Marlow St-Mawes Langley-Mill Hedon Lutterworth Inverness Nailsworth Ely Pickering Galashiels Low-Fell Dereham Farnham Coal-Pool Clayton-le-Moors Mexborough Christchurch Telscombe Rochdale Innerleithen Llanfairfechan Watford Kilkeel
+  Brixham Coalville Wantage Broughton Fowey Bingley Lyndhurst Featherstone Wigton Stocksbridge Tadcaster Stanfield-le-Hope Bedworth Shaw-and-Crompton Gellifor South-Petherton Dukinfield Leek Hawes Modbury Aberystwyth Cotgrave Tyldsley Kingsbridge Llanfyllin
+  Charlestown Bishop-Auckland Hadleigh Totnes Stockport Y-Felinheli Corbridge Cockenzie-and-Port-Seton Wood-Green Shipley Ellesmere Letchworth Porthmadog Hinckley
+</textarea>
+<p>
+  <div id="exp">
+    <p>
+      Test your own words here (no spaces or non a-z characters). Please try random words, names, place names, keyboard mashing etc!
+    </p>
+  </div>
+  <button type=button id="test_btn">Test</button>
+  <p>
+
+  </p>
+
+  <div id="rich">
+<p><strong>How does it work?</strong><br /> <br /><span style="font-size: 10pt;"> This is a simple neural network binary classifier for text. It distinguishes between the place names of two places/languages.</span> <br /> <br /> <strong>Feature Extraction - Character Vectorisation</strong></p>
+<p><span style="font-size: 10pt;">I used two different techniques to vectorise the text.&nbsp; Text itself is not directly usable by a neural network, instead the text is 'vectorised' - turned into a multi-dimensional data type.</span></p>
+<p><span style="font-size: 10pt;">E.g. in an alphabet with only five letters, for the word 'bed' we would create 15 (5 for the size of the alphabet x 3 letters in the word), and place a '1' in the second column to indicated the 'B'.</span></p>
+<table style="height: 44px;" width="223">
+<tbody>
+<tr>
+<td style="width: 48.8px; text-align: center;"><em>A</em></td>
+<td style="width: 48.8px; text-align: center;"><em>B</em></td>
+<td style="width: 49.6px; text-align: center;"><em>C</em></td>
+<td style="width: 49.6px; text-align: center;"><em>D</em></td>
+<td style="width: 49.6px; text-align: center;"><em>E</em></td>
+</tr>
+<tr>
+<td style="width: 48.8px; text-align: center;">0</td>
+<td style="width: 48.8px; text-align: center;">1</td>
+<td style="width: 49.6px; text-align: center;">0</td>
+<td style="width: 49.6px; text-align: center;">0</td>
+<td style="width: 49.6px; text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size: 10pt;">Then, we would do the same for the next letter, like so:</span></p>
+<table style="height: 37px;" width="224">
+<tbody>
+<tr style="height: 17px;">
+<td style="width: 38.4px; height: 17px; text-align: center;"><em>A</em></td>
+<td style="width: 38.4px; height: 17px; text-align: center;"><em>B</em></td>
+<td style="width: 38.4px; height: 17px; text-align: center;"><em>C</em></td>
+<td style="width: 38.4px; height: 17px; text-align: center;"><em>D</em></td>
+<td style="width: 39.2px; height: 17px; text-align: center;"><em>E</em></td>
+</tr>
+<tr>
+<td style="width: 38.4px; text-align: center;">0</td>
+<td style="width: 38.4px; text-align: center;">0</td>
+<td style="width: 38.4px; text-align: center;">0</td>
+<td style="width: 38.4px; text-align: center;">0</td>
+<td style="width: 39.2px; text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size: 10pt;">And so on for each letter. This means you get a lot of columns, with the majority of them set to '0'. You may be tempted to think 'why not cut down on columns by representing them as their character position 1 for A, 2 for B, 26 for Z etc?''&nbsp; The reason is that we would be implying some deeper mathematical relationship than actually exists to the algorithm.&nbsp; B isn't double A, and E isn't half of J.</span></p>
+<p><span style="font-size: 10pt;">However, this technique generates a lot of data for each word.&nbsp; Is there a way to do better?</span></p>
+<p><span style="font-size: 10pt;">Instead of representing each letter individually, we could try to represent the letters in the word.&nbsp; Take the word BABE.</span></p>
+<table style="height: 51px; width: 215.667px;">
+<tbody>
+<tr>
+<td style="width: 50px; text-align: center;"><em>A</em></td>
+<td style="width: 50px; text-align: center;"><em>B</em></td>
+<td style="width: 50px; text-align: center;"><em>C</em></td>
+<td style="width: 50px; text-align: center;"><em>D</em></td>
+<td style="width: 50px; text-align: center;"><em>E</em></td>
+</tr>
+<tr>
+<td style="width: 50px; text-align: center;">1</td>
+<td style="width: 50px; text-align: center;">1</td>
+<td style="width: 50px; text-align: center;">0</td>
+<td style="width: 50px; text-align: center;">0</td>
+<td style="width: 50px; text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size: 10pt;">We could use a '1' to indicate that the word contains the letter.&nbsp; In fact, we can do one better, and count the number of occurences of each letter.&nbsp; This is the second technique I used, 'count vectorisation'.</span></p>
+<table style="height: 38px; width: 210.667px;">
+<tbody>
+<tr>
+<td style="width: 50px; text-align: center;"><em>A</em></td>
+<td style="width: 50px; text-align: center;"><em>B</em></td>
+<td style="width: 50px; text-align: center;"><em>C</em></td>
+<td style="width: 50px; text-align: center;"><em>D</em></td>
+<td style="width: 50px; text-align: center;"><em>E</em></td>
+</tr>
+<tr>
+<td style="width: 50px; text-align: center;">1</td>
+<td style="width: 50px; text-align: center;">2</td>
+<td style="width: 50px; text-align: center;">0</td>
+<td style="width: 50px; text-align: center;">0</td>
+<td style="width: 50px; text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p><strong> Feature Extraction - Other features</strong></p>
+<p><span style="font-size: 10pt;">I also wanted to extract some of the structure of the words.&nbsp; Using count vectorisation, the words 'able' and 'bale' look identical.&nbsp; I found that using regular expressions, it is possible to get a rough idea of the number of syllables in a word.&nbsp; It's not exact: it may count 'bale' as having two syllables, but it was generally close.&nbsp; The syllable count by itself was not good enough because it did not encode the 'density' of syllables.&nbsp; So the word length divided by syllables works.</span></p>
+<p><span style="font-size: 10pt;">Finally, I entered one more feature into the model: is the last letter a vowel, with a binary 1 or 0 as the data.</span></p>
+<p><br /> <strong>Neural Network - basics</strong></p>
+<p><span style="font-size: 10pt;">I'm not able to describe entirely what a neural network is here.&nbsp;</span></p>
+<p><span style="font-size: 10pt;">The basic idea is that data is entered into the network, iteration by iteration.&nbsp; The data 'flows' through the network, where it is combined together and undergoes relatively simple mathematical procedures.&nbsp; The data then pops out the other side, and this is the prediction.&nbsp; The data is input one 'column' by one, so each datapoint (in this case the 26 letters + other features) is entered one by one.</span></p>
+<p><span style="font-size: 10pt;">The mathematical processes that happen are based on 'weights' - numbers that are multiplied with the input data.&nbsp; Initially, the weights are as good as random, and the output from the network is random, and not useful.&nbsp; Data is also passed through nonlinear 'activation' functions, so that the network is able to understand nonlinear relationships between the data points.</span></p>
+<p><span style="font-size: 10pt;">We can compare the output from the network with the 'label' - the actual classification. We take the difference between the output and the actual value, is go back through the network and change the weights, just a little bit, so that next time the output would be slightly closer to the correct answer.&nbsp; Doing this over a lot of iterations over enough data means that the network gets better at generalising - understanding the relationships in the data that cause it to be labelled one way or the other.</span></p>
+<p><strong>Neural Network - setup</strong></p>
+<p><span style="font-size: 10pt;">The neural network code comes from synaptic.js.&nbsp; It is a simple network, with a depth of 26 charachters + the other 2 features.&nbsp; There is one hidden layer of the same depth, with a ReLU activation function (or 'squash', as the synaptic API refers to them as).&nbsp; ReLU means 'Rectified Linear Unit' - but just means that values under 0 are set to 0, and values above zero are unchanged.&nbsp; The final layer has one output with the logistic function - necessary for the binary classification.</span><br /> <br /> <strong>Scoring</strong></p>
+<p>The network is scored by accuracy at the moment.</p>
+  </div>
+
+
+  <div id="output">
+    Results will go here
+  </div>
+
+</div>  
+                
+            <!--    <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a>  -->
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+        <script>
+        
+    function menu_toggle(e){
+        $("#wrapper").toggleClass("toggled");
+        if ($("#menu-toggle").text() === ">") {
+           $("#menu-toggle").html("<h2><</h2>");
+        } else {
+           $("#menu-toggle").html("<h2>></h2>");
+        }
+    }
+        
+       
+    $("#menu-toggle").click(function() {
+       menu_toggle();
+    });
+        
+      $(function() {
+        $("#sidebar-wrapper").load("/global/sidebar.html");
+      });
+
+      $(function() {
+            bin_name_class();
+      });
+    </script>
+
+</body>
+
+</html>
