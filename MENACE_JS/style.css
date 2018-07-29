@@ -10,7 +10,8 @@
 }
 
 #pplgraph {
-  float: right;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #den {
@@ -19,9 +20,11 @@
 
 #cvs {
   /* This centers our sketch horizontally. */
-  justify-content: center;
+  /* justify-content: center; */
   /* This centers our sketch vertically. */
-  align-items: center;
+  /* align-items: center; */
+  margin-right: auto;
+  margin-left: auto;
 }
 
 
