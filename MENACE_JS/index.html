@@ -41,6 +41,8 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
+                <div id="buttonmenu"><a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><h2>></h2></a></div>
+
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <h1>MENACE.js</h1>
@@ -105,7 +107,7 @@ rewards['o']['initial'] = 20;
     <iframe width="560" height="315" src="https://www.youtube.com/embed/R9c-_neaxeU" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
                 <p></p>
-      <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a>
+      <!--  <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a> -->
 
         <!-- /#page-content-wrapper -->
 
@@ -115,23 +117,23 @@ rewards['o']['initial'] = 20;
 
     <script>
 
-        
-        
-        
-    function menu_toggle(){
-    //    e.preventDefault();
+          function menu_toggle(e){
         $("#wrapper").toggleClass("toggled");
+        if ($("#menu-toggle").text() === ">") {
+           $("#menu-toggle").html("<h2><</h2>");
+        } else {
+           $("#menu-toggle").html("<h2>></h2>");
+        }
     }
         
        
-    $("#menu-toggle").click(function(e) {
-       menu_toggle()
+    $("#menu-toggle").click(function() {
+       menu_toggle();
     });
         
       $(function() {
-            $("#sidebar-wrapper").load("/global/sidebar.html");
+        $("#sidebar-wrapper").load("/global/sidebar.html");
       });
-
         
       $(function() {
             menace();
