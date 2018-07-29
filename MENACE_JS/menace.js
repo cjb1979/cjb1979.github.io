@@ -84,7 +84,7 @@ rewards['o'] = default_rewards
 console.log(rewards)
 var paths = [];
 
-  = function(x, y, w) {
+ paths['x'] = function(x, y, w) {
   b_ctx.beginPath();
   b_ctx.strokeStyle = "#000000";
   var b = w / 5;
