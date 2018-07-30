@@ -190,10 +190,10 @@ function bin_name_class() {
         train_iteration();
     }
     
-    let output_str = (name, pred_class, score, joiner) => {
-        let joiner = joiner || " ";       
+    let output_str = (name, pred_class, score, j) => {
+        j = j || " ";       
         var str = ["Place name: " + name, "Prediction: " + pred_class, "Score: " + score.toFixed(4)];
-        return str.join(joiner);
+        return str.join(j);
     }
 
 
