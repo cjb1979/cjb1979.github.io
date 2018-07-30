@@ -206,15 +206,17 @@
     });
         
     function load_data(){
+        var def = $.Deferred();
         $("#a").load("/data/jp.txt");
         $("#b").load("/data/en.txt");
+        return def;
     }
             
       $(function() {
         $("#sidebar-wrapper").load("/global/sidebar.html");
       });
 
-      $.when(load_data()).done(bin_name_class());      
+      load_data().done( bin_name_class() );      
             
     </script>
 
