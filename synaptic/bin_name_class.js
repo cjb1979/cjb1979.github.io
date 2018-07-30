@@ -191,8 +191,9 @@ function bin_name_class() {
     }
     
     let output_str = (name, pred_class, score, j) => {
-        j = j || " ";       
-        var str = ["Place name: " + name, "Prediction: " + pred_class, "Score: " + score.toFixed(4)];
+        j = j || " "; 
+        score = score.toFixed(4);
+        var str = ["Place name: " + name, "Prediction: " + pred_class, "Score: " + score];
         return str.join(j);
     }
 
