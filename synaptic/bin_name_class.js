@@ -206,7 +206,7 @@ function bin_name_class() {
         var i = rand_int(0, test_text.length);
         var name = prompt("Please enter a word to test\n(There is already a place name to try)", test_text[i]);
         var p = predict(clean(name));
-        var str = output_str(name, p.class, p.prediction.toFixed(4), "\n");
+        var str = output_str(name, p.class, p.prediction, "\n");
         alert(str);
     }
     
