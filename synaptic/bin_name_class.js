@@ -1,6 +1,6 @@
 function bin_name_class() {
 
-    var split_amt = 0.1;
+    var split_amt = 0.2;
     var validation_split = (x, ratio) => {
         //randomise the order of the array, then take the top values off for testing
         var len = x.length;
