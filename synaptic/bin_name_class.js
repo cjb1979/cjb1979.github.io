@@ -90,7 +90,8 @@ function bin_name_class() {
         });
         return v
     }
-    var step = (x) => (x > 0.5) ? 1 : 0;
+    var step = (x) => (x >= 0.5) ? 1 : 0;
+    
     var predict = (name) => {
         var d;
         if (typeof name === "string") {
@@ -176,17 +177,25 @@ function bin_name_class() {
             nn.propagate(learningRate, [0]);
             nn.activate(_b[index]);
             nn.propagate(learningRate, [1]);
-            html_status.innerHTML = "iteration " + i + " of " + max_iterations + " (" +
-                ((i / max_iterations) * 100).toFixed(2) + "%)";
+            html_status.innerHTML = "Iteration " + i + " of " + max_iterations + " (" +
+                ((i / max_iterations) * 100).toFixed(1) + "%)";
             i++;
             if (i < max_iterations) {
                 setTimeout(train_iteration, 1);
             } else {
+                html_status.innerHTML = "Training Complete!";
                 output_sequence();
             }
         }
         train_iteration();
     }
+    
+    let output_str = (name, pred_class, score, joiner) => {
+        let joiner = joiner || " ";       
+        var str = ["Place name: " + name, "Prediction: " + pred_class, "Score: " + score.toFixed(4)];
+        return str.join(joiner);
+    }
+
 
     function test_word() {
         var test_text = [...a, ...b];
@@ -195,12 +204,12 @@ function bin_name_class() {
             return Math.floor(Math.random() * (max - min + 1) + min);
         }
         var i = rand_int(0, test_text.length);
-        var name = prompt("Please enter a word to test", test_text[i]);
+        var name = prompt("Please enter a word to test\n(There is already a place name to try)", test_text[i]);
         var p = predict(clean(name));
-        var str = (name + " > " + p.class + " __ score: " + p.prediction.toFixed(4));
+        var str = output_str(name, p.class, p.prediction.toFixed(4), "\n");
         alert(str);
     }
-
+    
     function output_sequence() {
         var html_output = document.getElementById('output');
         var arr = [];
@@ -209,15 +218,16 @@ function bin_name_class() {
         var correct = 0;
         a_names.forEach(function(name) {
             var p = predict(clean(name));
-            if (p.class === "Japan") correct++;
-            var str = (name + " > " + p.class + " __ score: " + p.prediction.toFixed(4));
+            if (p.class === "Japan") correct++; 
+            var str = output_str(name, p.class, p.prediction);// (name + " > " + p.class + " __ score: " + p.prediction.toFixed(4));
             arr.push(str)
             total++;
         });
         b_names.forEach(function(name) {
             var p = predict(clean(name));
             if (p.class === "UK") correct++;
-            var str = (name + " > " + p.class + " ___ " + p.prediction.toFixed(4));
+            //var str = (name + " > " + p.class + " ___ " + p.prediction.toFixed(4));
+            var str = output_str(name, p.class, p.prediction);
             arr.push(str);
             total++;
         });
