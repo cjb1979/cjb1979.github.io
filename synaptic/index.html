@@ -205,16 +205,17 @@
        menu_toggle();
     });
         
-      $(function() {
-        $("#sidebar-wrapper").load("/global/sidebar.html");
+    function load_data(){
         $("#a").load("/data/jp.txt");
         $("#b").load("/data/en.txt");
-
-      });
-
+    }
+            
       $(function() {
-            bin_name_class();
+        $("#sidebar-wrapper").load("/global/sidebar.html");
       });
+
+      $.when(load_data()).done(bin_name_class());      
+            
     </script>
 
 </body>
