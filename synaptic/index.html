@@ -205,18 +205,17 @@
        menu_toggle();
     });
         
-    function load_data(){
-        var def = $.Deferred();
-        $("#a").load("/data/jp.txt");
-        $("#b").load("/data/en.txt");
-        return def;
-    }
+    $(function(){
+        $("#a").load("/data/jp.txt", function(){
+          $("#b").load("/data/en.txt", function(){
+              bin_name_class();
+          });
+        });
+    });
             
       $(function() {
         $("#sidebar-wrapper").load("/global/sidebar.html");
       });
-
-      load_data().done( bin_name_class() );      
             
     </script>
 
