@@ -1,0 +1,34 @@
+Language:
+<form action="">
+  <input type="checkbox" name="lang" value="JP" id="lang_JP" checked="checked"> JP<br>
+  <input type="checkbox" name="lang" value="UK" id="lang_UK">UK<br>
+  <input type="checkbox" name="lang" value="CH" id="lang_CH">CH<br>
+  <input type="checkbox" name="lang" value="DE" id="lang_DE">DE<br>
+</form>
+<p>
+
+</p>
+Conservativeness:
+<form name="slidecontainer">
+  <input type="range" min="0" max="150" value="100" class="slider" id="power_slider" oninput="power_output_i.value = power_slider.value">
+  <output name="power_output_n" id="power_output_i">100</output>
+</form>
+Lookback:
+<form name="slidecontainer">
+  <input type="range" min="1" max="3" value="3" class="slider" id="ngram_slider" oninput="ngram_output_i.value = ngram_slider.value">
+  <output name="ngram_output_n" id="ngram_output_i">3</output>
+
+</form>
+% Of Samples:
+<form name="slidecontainer">
+  <input type="range" min="1" max="100" value="100" class="slider" id="sample_slider" oninput="sample_output_i.value = sample_slider.value">
+  <output name="sample_output_n" id="sample_output_i">100</output>
+
+</form>
+
+
+<button type=button id="btn">Generate</button>
+
+
+<div id="output">
+</div>
