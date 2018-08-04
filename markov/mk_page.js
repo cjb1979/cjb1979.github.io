@@ -37,7 +37,16 @@ function wrapper() {
   };
 
   let t = markov.get(settings);
+  
+  let arr = t.split(" ");
 
-  document.getElementById('output').innerHTML = t
+  $('#op1').html( arr[0] );
+  $('#op2').html( arr[1] );
+  $('#op3').html( arr[2] );
+  $('#op4').html( arr[3] );
+  $('#op5').html( arr[4] );
+  $('#op6').html( arr[5] );
+  
+  //document.getElementById('output').innerHTML = t
 
 }
