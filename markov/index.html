@@ -55,10 +55,9 @@
                   <button type=button id="btn" class = "btn btn-primary btn-lg btn-block">Generate 10 New Place Names</button>
                   <p>
                   </p>
-                  <samp><div id="output"></div></samp>
-                  
-                  <p>
-                  </p>
+                  <samp><div id="output">
+                        
+                  </div></samp>
                </div>
                </div>
                </div>
@@ -110,16 +109,25 @@
                <form name="slidecontainer">
                   <input type="range" min="0" max="150" value="100" class="slider" id="power_slider" oninput="power_output_i.value = power_slider.value">
                   <output name="power_output_n" id="power_output_i">100</output>
+                  <small id="exp" class="form-text text-muted">
+                     How unlikely it is that the model will pick an uncommon pattern.  The higher the number, the more likely the most common patterns will be followed.
+                  </small>
                </form>
                Lookback:
                <form name="slidecontainer">
                   <input type="range" min="1" max="3" value="3" class="slider" id="ngram_slider" oninput="ngram_output_i.value = ngram_slider.value">
                   <output name="ngram_output_n" id="ngram_output_i">3</output>
+                   <small id="exp" class="form-text text-muted">
+                     How many groups of consecutive letters the model looks at.  The higher the number, the more 'realistic' the place names will look.
+                  </small>
                </form>
                % Of Samples:
                <form name="slidecontainer">
                   <input type="range" min="1" max="100" value="100" class="slider" id="sample_slider" oninput="sample_output_i.value = sample_slider.value">
                   <output name="sample_output_n" id="sample_output_i">100</output>
+                   <small id="exp" class="form-text text-muted">
+                      How many place name samples the model looks at, as a % of the total.  The more samples, the more realistic.
+                   </small>
                </form>
                <!--    <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a>  -->
             </div>
