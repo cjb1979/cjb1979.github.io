@@ -31,8 +31,8 @@ function wrapper() {
     text,
     n,
     power,
-    samples: 50,
-    examples: 500,
+    samples: 1,
+    examples: 10,
     as_array: false
   };
 
