@@ -1,4 +1,4 @@
-document.getElementById('btn').addEventListener('click', wrapper, true);
+//document.getElementById('btn').addEventListener('click', wrapper, true);
 
 function wrapper() {
 
