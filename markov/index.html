@@ -1,3 +1,79 @@
+<html lang="en">
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5BMBQGD');</script>
+<!-- End Google Tag Manager -->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CJ Boyd</title>
+    
+    <!--<link rel="stylesheet" type="text/css" href="/global/custom.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="mk.js"></script>
+    <script src="mk_page.js"></script>
+
+    <!-- Bootstrap core CSS
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    -->
+    
+    <!-- Custom styles for this template -->
+    <link href="/global/simple-sidebar.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BMBQGD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <!-- Loaded in with $().load-->
+        </div>
+       
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+                <div id="buttonmenu"><a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><h2>></h2></a></div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>Place Name Generator</h1>
+                <h2>Using Markov Chains</h2>
+              
+              <textarea class='input' id="a">
+              </textarea>
+              <textarea class='input' id="b">
+              </textarea>
+              <textarea class='input' id="c">
+              </textarea>
+              <textarea class='input' id="d">
+              </textarea>
+              
+              <p>
+              </p>
+             
+
+
 Language:
 <form action="">
   <input type="checkbox" name="lang" value="JP" id="lang_JP" checked="checked"> JP<br>
@@ -32,3 +108,48 @@ Lookback:
 
 <div id="output">
 </div>
+                          <!--    <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a>  -->
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+        <script>
+        
+    function menu_toggle(e){
+        $("#wrapper").toggleClass("toggled");
+        if ($("#menu-toggle").text() === ">") {
+           $("#menu-toggle").html("<h2><</h2>");
+        } else {
+           $("#menu-toggle").html("<h2>></h2>");
+        }
+    }
+        
+       
+    $("#menu-toggle").click(function() {
+       menu_toggle();
+    });
+        
+    $(function(){
+        $("#a").load("/data/jp.txt", function(){
+          $("#b").load("/data/en.txt", function(){
+            $("#c").load("/data/ch.txt", function(){
+              $("#d").load("/data/en.txt", function(){
+              
+               });
+            }); 
+          });
+        });
+    });
+            
+      $(function() {
+        $("#sidebar-wrapper").load("/global/sidebar.html");
+      });
+            
+    </script>
+
+</body>
+
+</html>
