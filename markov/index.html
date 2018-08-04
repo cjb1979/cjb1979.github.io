@@ -51,7 +51,11 @@
                <div class="container-fluid .col-md-6 .col-md-offset-3">
                   <h1>Place Name Generator</h1>
                   <h3>Generate New Place Names using Markov Chains</h3>
-                  This Markov Chain model takes in real place names, and generates new place names based on the letter patterns within those place names.  Fiddle with the input options to generate crazy or realistic place names.
+                  <p>This Markov Chain model takes in real place names, and generates new place names based on the letter patterns within those place names.</p>
+                  <p>Fiddle with the input options to generate crazy or realistic place names.</p>
+                  <button type=button id="btn">Generate 10 New Place Names</button>
+                  <div id="output"></div>
+                  
                   <p>
                   </p>
                </div>
@@ -116,8 +120,6 @@
                   <input type="range" min="1" max="100" value="100" class="slider" id="sample_slider" oninput="sample_output_i.value = sample_slider.value">
                   <output name="sample_output_n" id="sample_output_i">100</output>
                </form>
-               <button type=button id="btn">Generate</button>
-               <div id="output"></div>
                <!--    <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a>  -->
             </div>
             <!-- /#page-content-wrapper -->
