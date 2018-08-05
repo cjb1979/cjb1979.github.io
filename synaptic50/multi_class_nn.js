@@ -1,3 +1,6 @@
+function multi_name_class() {
+
+
 var split_amt = 0.99;
 
 var validation_split = (x, ratio) => {
@@ -407,4 +410,6 @@ function output_sequence() {
   html_output.innerHTML = acc_str;
 
   return
+}
+  
 }
