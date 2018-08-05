@@ -425,7 +425,7 @@ function output_sequence() {
   var acc_str = ((correct / total) * 100).toFixed(2) + "%";
   
   $('#op6').html(acc_str);
-
+  $('btn').prop('disabled', false);
   console.log("_______");
   console.log(correct + " " + total + " " + acc_str);
   console.log("_______");
