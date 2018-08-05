@@ -61,13 +61,6 @@
                   </div> 
                   <p>
                   </p>
-                  <div class = "row justify-content-center">
-                  <div class="col-6">
-                  <button type=button id="btn" class = "btn btn-primary btn-lg btn-block">Test Place Name</button>
-                  </div>
-                  </div>  
-                  <p>
-                  </p>
                  <div class = "row justify-content-center">
                  <div class="col-8">
                   <div class="progress">
@@ -75,6 +68,13 @@
                      <span class="sr-only"></span>
                   </div>
                   </div>
+                  <p>
+                  </p>
+                  <div class = "row justify-content-center">
+                  <div class="col-6">
+                  <button type=button id="btn" class = "btn btn-primary btn-lg btn-block">Test Place Name</button>
+                  </div>
+                  </div>  
                   </div>
                   </div>
                   <p>
@@ -199,6 +199,8 @@
       </div>
       <!-- /#wrapper -->
       <script>
+         
+         $('btn').prop('disabled', true);
          function menu_toggle(e){
              $("#wrapper").toggleClass("toggled");
              if ($("#menu-toggle").text() === ">") {
