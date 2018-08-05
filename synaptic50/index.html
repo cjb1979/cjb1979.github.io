@@ -70,23 +70,7 @@
                </div>
                </div>
                </div>
-               Data from which country:
-               <div class = "row">
-                  <!-- <form action=""> -->
-                  <div class="col">
-                     <input type="checkbox" name="lang" value="JP" id="lang_JP"  checked="checked">Japan<br>
-                  </div>
-                  <div class="col">
-                     <input type="checkbox" name="lang" value="UK" id="lang_UK"  >United Kingdom<br>
-                  </div>
-                  <div class="col">
-                     <input type="checkbox" name="lang" value="CH" id="lang_CH" >China<br>
-                  </div>
-                  <div class="col">
-                     <input type="checkbox" name="lang" value="DE" id="lang_DE" >Germany<br>
-                  </div>
-                  <!--     </form>   -->
-               </div>
+               Real data:
                <form name="inputcontainer">
                <div class="row">
                   <div class="col">
@@ -100,6 +84,26 @@
                   </div>
                   <div class="col">
                      <textarea class="input col form-control" id="d"> </textarea>
+                  </div>
+               </div>
+                <small id="exp" class="form-text text-muted">
+                   Pick one or more place name corpuses to enter them into the model.  Or select none for a surprise...
+                </small>
+              </form>
+               Synthesise data:
+               <form name="inputcontainer">
+               <div class="row">
+                  <div class="col">
+                     <textarea class= "input col form-control" id="a_s"> </textarea>
+                  </div>
+                  <div class="col">
+                     <textarea class="input col form-control" id="b_s"> </textarea>
+                  </div>
+                  <div class="col">
+                     <textarea class="input col form-control" id="c_s"> </textarea>
+                  </div>
+                  <div class="col">
+                     <textarea class="input col form-control" id="d_s"> </textarea>
                   </div>
                </div>
                 <small id="exp" class="form-text text-muted">
@@ -177,7 +181,25 @@
                $("#b").load("/data/en50.txt", function(){
                  $("#c").load("/data/ch50.txt", function(){
                    $("#d").load("/data/de50.txt", function(){
-                      document.getElementById('btn').addEventListener('click', wrapper, true);
+                      
+                      let settings = {
+                            n: 3,
+                            power: 1.5,
+                            samples: 1,
+                            examples: 500,
+                            as_array: false
+                       };
+                      
+                      settings.text = $("#a").val();
+                      $("#a_s").text( markov.get ( settings ));
+                      settings.text = $("#b").val();
+                      $("#b_s").text( markov.get ( settings ));
+                      settings.text = $("#c").val();
+                      $("#c_s").text( markov.get ( settings ));
+                      settings.text = $("#d").val();
+                      $("#c_s").text( markov.get ( settings ));
+
+                      
                     });
                  }); 
                });
