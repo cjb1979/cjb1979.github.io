@@ -56,7 +56,12 @@
                   <p>Fiddle with the input options to generate crazy or realistic place names.</p>
                   <div class = "row justify-content-center">
                   <div class="col-6">
-                  <button type=button id="btn" class = "btn btn-primary btn-lg btn-block">Generate New Place Names</button>
+                  <button type=button id="btn_go" class = "btn btn-primary btn-lg btn-block">Start</button>
+                  </div>
+                  </div> 
+                  <div class = "row justify-content-center">
+                  <div class="col-6">
+                  <button type=button id="btn" class = "btn btn-primary btn-lg btn-block">Test Place Name</button>
                   </div>
                   </div>  
                   <p>
@@ -195,29 +200,41 @@
                  $("#c").load("/data/ch.txt", function(){
                    $("#d").load("/data/de.txt", function(){
                       
-                      let settings = {
-                            n: 3,
-                            power: 1.5,
-                            samples: 50,
-                            examples: 500,
-                            as_array: false
-                       };
-                      
-                      settings.text = $("#a").val();
-                      $("#a_s").text( markov.get ( settings ));
-                      settings.text = $("#b").val();
-                      $("#b_s").text( markov.get ( settings ));
-                      settings.text = $("#c").val();
-                      $("#c_s").text( markov.get ( settings ));
-                      settings.text = $("#d").val();
-                      $("#d_s").text( markov.get ( settings ));
+                      document.getElementById('btn_go').addEventListener('click', wrapper, true);
 
-                      multi_name_class()
+                      //multi_name_class()
                     });
                  }); 
                });
              });
          });
+         
+         function wrapper(){
+            get_markov_results();
+            multi_name_class();
+         }
+         
+         
+         function get_markov_results(){
+            
+           let settings = {
+                 n: 3,
+                 power: 1.5,
+                 samples: 50,
+                 examples: 500,
+                 as_array: false
+           };
+                      
+           settings.text = $("#a").val();
+           $("#a_s").text( markov.get ( settings ));
+           settings.text = $("#b").val();
+           $("#b_s").text( markov.get ( settings ));
+           settings.text = $("#c").val();
+           $("#c_s").text( markov.get ( settings ));
+           settings.text = $("#d").val();
+           $("#d_s").text( markov.get ( settings ));
+            
+        }
                  
            $(function() {
              $("#sidebar-wrapper").load("/global/sidebar.html");
