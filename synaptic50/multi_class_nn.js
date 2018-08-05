@@ -277,7 +277,7 @@ var d = d_split.train;
 d = d.concat(parsed_d_s);
 var d_names = d_split.test;
 
-var html_status = document.getElementById('status');
+//var html_status = document.getElementById('status');
 
 document.getElementById('btn').addEventListener('click', test_word, true);
 
@@ -342,8 +342,7 @@ function train(max_iterations) {
     nn.activate(_d[index]);
     nn.propagate(learningRate, [0, 0, 0, 1]);
 
-    html_status.innerHTML = "iteration " + i + " of " + max_iterations + " (" +
-      ((i / max_iterations) * 100).toFixed(2) + "%)";
+    //html_status.innerHTML = "iteration " + i + " of " + max_iterations + " (" + ((i / max_iterations) * 100).toFixed(2) + "%)";
 
     i++;
 
@@ -374,7 +373,7 @@ function output_sequence() {
 
   var classes = ['Japan', 'UK', 'China', "Germany"];
 
-  var html_output = document.getElementById('output');
+ // var html_output = document.getElementById('output');
 
   const get_acc_score = (arr, label) => {
     var x =  arr.reduce(function(acc, curr) {
@@ -407,7 +406,7 @@ function output_sequence() {
   console.log("_______");
   console.log(correct + " " + total + " " + acc_str);
 
-  html_output.innerHTML = acc_str;
+ // html_output.innerHTML = acc_str;
 
   return
 }
