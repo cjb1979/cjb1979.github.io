@@ -1,6 +1,6 @@
 const markov = (() => {
 
-  const amt_calc = (x) => {
+  const amt_calc = (x , power) => {
     return Math.max(1, parseInt(Math.pow(x, power)));
   }
 
@@ -64,14 +64,14 @@ const markov = (() => {
 
   }
 
-  var new_n_start = (table) => {
+  var new_n_start = (table, power) => {
     var keys = Object.keys(table).filter(x => x.split("")[0] === "`");
 
     var a = [];
 
     keys.forEach((key) => {
       var amt = table[key]['_count'];
-      for (let i = 0; i < amt_calc(amt); i++) {
+      for (let i = 0; i < amt_calc(amt, power); i++) {
         a.push(key);
       }
     })
@@ -81,7 +81,7 @@ const markov = (() => {
 
   }
 
-  var next = (table, last) => {
+  var next = (table, last, power) => {
 
     var options = table[last];
     var keys = Object.keys(options).filter(x => x !== "_count");
@@ -89,7 +89,7 @@ const markov = (() => {
 
     keys.forEach((key) => {
       var amt = options[key];
-      for (let i = 0; i < amt_calc(amt); i++) {
+      for (let i = 0; i < amt_calc(amt, power); i++) {
         a.push(key);
       }
     });
@@ -101,14 +101,14 @@ const markov = (() => {
 
   }
 
-  const gen = (table, n, max) => {
+  const gen = (table, n, max, power) => {
     let arr = [];
     for (let i = 0; i < max; i++) {
-      var str = new_n_start(table);
+      var str = new_n_start(table, power);
 
       while ((str.split("").slice(-1).pop() !== "`" && str.length < 15) || (str.length <= 1)) {
         var curr = str.split("").slice(-n).join("");
-        str += next(table, curr)
+        str += next(table, curr, power);
       }
       arr.push(str);
     }
@@ -127,7 +127,7 @@ const markov = (() => {
 
     let table = fre(text, n, samples);
 
-    let res = gen(table, n, examples);
+    let res = gen(table, n, examples, power);
 
     if (as_array) return res;
 
