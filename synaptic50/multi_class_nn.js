@@ -410,14 +410,14 @@ function output_sequence() {
   totals[3] = c_names.length;
   correct += res[3];
   
-  res = res.map((x, i) => {
+  let out = res.map((x, i) => {
     return ((x / totals[i]) * 100).toFixed(2) + "%<br>" + x + " / " + totals[i];
   });
   
-  $('#op1').html( res[0] );
-  $('#op2').html( res[1] );
-  $('#op3').html( res[2] );
-  $('#op4').html( res[3] );
+  $('#op1').html( out[0] );
+  $('#op2').html( out[1] );
+  $('#op3').html( out[2] );
+  $('#op4').html( out[3] );
 
   var total = a_names.length + b_names.length + c_names.length + d_names.length
   
@@ -428,6 +428,8 @@ function output_sequence() {
 
   console.log("_______");
   console.log(correct + " " + total + " " + acc_str);
+  console.log("_______");
+  console.log(JSON.stringify(out));
 
  // html_output.innerHTML = acc_str;
 
