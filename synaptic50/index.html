@@ -90,7 +90,7 @@
                    Pick one or more place name corpuses to enter them into the model.  Or select none for a surprise...
                 </small>
               </form>
-               Synthesise data:
+            Synthesised data (using <a href = "/markov/">Markov model</a>:
                <form name="inputcontainer">
                <div class="row">
                   <div class="col">
@@ -197,7 +197,7 @@
                       settings.text = $("#c").val();
                       $("#c_s").text( markov.get ( settings ));
                       settings.text = $("#d").val();
-                      $("#c_s").text( markov.get ( settings ));
+                      $("#d_s").text( markov.get ( settings ));
 
                       
                     });
