@@ -351,6 +351,7 @@ function train(max_iterations) {
     if (i < max_iterations) {
       setTimeout(train_iteration, 1);
     } else {
+      $('.progress-bar').css('width', '0%').attr('aria-valuenow', 0);    
       output_sequence();
     }
   }
@@ -421,10 +422,9 @@ function output_sequence() {
 
   var total = a_names.length + b_names.length + c_names.length + d_names.length
   
-  var acc_str = "Accuracy: " + ((correct / total) * 100).toFixed(2) + "%";
+  var acc_str = ((correct / total) * 100).toFixed(2) + "%";
   
-  $('#op5').html(acc_str);
-
+  $('#op6').html(acc_str);
 
   console.log("_______");
   console.log(correct + " " + total + " " + acc_str);
