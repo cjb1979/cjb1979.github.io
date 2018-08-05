@@ -411,7 +411,7 @@ function output_sequence() {
   correct += res[3];
   
   res = res.map((x, i) => {
-    return ((x / totals[i]) * 100).toFixed(2) + "%" + "<br> + x + "/" + totals[i];
+    return ((x / totals[i]) * 100).toFixed(2) + "%<br>" + x + " / " + totals[i];
   });
   
   $('#op1').html( res[0] );
