@@ -341,10 +341,12 @@ function train(max_iterations) {
     nn.propagate(learningRate, [0, 0, 1, 0]);
     nn.activate(_d[index]);
     nn.propagate(learningRate, [0, 0, 0, 1]);
+    
+    i++;
 
     //html_status.innerHTML = "iteration " + i + " of " + max_iterations + " (" + ((i / max_iterations) * 100).toFixed(2) + "%)";
-
-    i++;
+    let value = "" + parseInt((i / max_iterations) * 100)
+    $('.progress-bar').css('width', value+'%').attr('aria-valuenow', value);    
 
     if (i < max_iterations) {
       setTimeout(train_iteration, 1);
