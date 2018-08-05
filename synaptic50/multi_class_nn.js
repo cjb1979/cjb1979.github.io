@@ -403,12 +403,12 @@ function output_sequence() {
   totals[1] = b_names.length;
   correct += res[1];
 
-  res[2] = get_acc_score(b_names, classes[2]);
+  res[2] = get_acc_score(c_names, classes[2]);
   totals[2] = c_names.length;
   correct += res[2];
   
-  res[3] = get_acc_score(b_names, classes[3]);
-  totals[3] = c_names.length;
+  res[3] = get_acc_score(d_names, classes[3]);
+  totals[3] = d_names.length;
   correct += res[3];
   
   let out = res.map((x, i) => {
