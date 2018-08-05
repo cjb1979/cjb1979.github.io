@@ -279,7 +279,7 @@ var d_names = d_split.test;
 
 var html_status = document.getElementById('status');
 
-document.getElementById('test_btn').addEventListener('click', test_word, true);
+document.getElementById('btn').addEventListener('click', test_word, true);
 
 var feature_extractors = [
   vectoriser,
