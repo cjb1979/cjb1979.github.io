@@ -59,6 +59,8 @@
                   <button type=button id="btn_go" class = "btn btn-primary btn-lg btn-block">Start</button>
                   </div>
                   </div> 
+                  <p>
+                  </p>
                   <div class = "row justify-content-center">
                   <div class="col-6">
                   <button type=button id="btn" class = "btn btn-primary btn-lg btn-block">Test Place Name</button>
@@ -78,12 +80,21 @@
                   <p>
                   </p>
                   <div class = "row">
-                     <samp class="col" id = "op1"> </samp>
-                     <samp class="col" id = "op2"> </samp>
-                     <samp class="col" id = "op3"> </samp>
-                     <samp class="col" id = "op4"> </samp>
+                     <div class="col" id = "ex1">Japan</div>
+                     <div class="col" id = "ex2">UK</div>
+                     <div class="col" id = "ex3">China</div>
+                     <div class="col" id = "ex4">Germany</div>
+                     <div class="col" id = "ex5"> </div>
+                     <div class="col" id = "ex6">Total</div>
+                  </div>
+                  
+                  <div class = "row">
+                     <samp class="col" id = "op1">--%</samp>
+                     <samp class="col" id = "op2">--%</samp>
+                     <samp class="col" id = "op3">--%</samp>
+                     <samp class="col" id = "op4">--%</samp>
                      <samp class="col" id = "op5"> </samp>
-                     <samp class="col" id = "op6"> </samp>
+                     <samp class="col" id = "op6">--%</samp>
                   </div>
                </div>
                </div>
@@ -230,7 +241,6 @@
            var n = parseInt(document.getElementById("ngram_slider").value);
            var examples = parseInt(document.getElementById("gen_slider").value);
 
-            
            let settings = {
                  n,
                  power,
