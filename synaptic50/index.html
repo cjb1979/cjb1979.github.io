@@ -166,6 +166,14 @@
                       How many place name samples the model looks at, as a % of the total.  The more samples, the more realistic.
                    </small>
                </form>
+               Number of place names generated:
+               <form name="slidecontainer">
+                  <input type="range" min="10" max="1000" value="500" class="slider" id="gen_slider" oninput="gen_output_i.value = gen_slider.value">
+                  <output name="gen_output_n" id="gen_output_i">500</output>
+                   <small id="exp" class="form-text text-muted">
+                      How many place name samples the model generates, that are then fed into the neural network.
+                   </small>
+               </form>
                <!--    <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a>  -->
             
             <p>
@@ -216,12 +224,18 @@
          
          
          function get_markov_results(){
+                
+           var power = parseInt(document.getElementById("power_slider").value) / 100;
+         //  var samples = (parseInt(document.getElementById("sample_slider").value) / 100);
+           var n = parseInt(document.getElementById("ngram_slider").value);
+           var examples = parseInt(document.getElementById("gen_slider").value);
+
             
            let settings = {
-                 n: 3,
-                 power: 1.5,
+                 n,
+                 power,
                  samples: 50,
-                 examples: 500,
+                 examples,
                  as_array: false
            };
                       
