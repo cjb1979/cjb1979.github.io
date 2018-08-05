@@ -391,19 +391,40 @@ function output_sequence() {
   }
 
   var correct = 0;
+  var res = [];
+  var totals = [];
   
-  console.log(classes[0]);
-  correct += get_acc_score(a_names, classes[0]);
-  console.log(classes[1]);
-  correct += get_acc_score(b_names, classes[1]);
-  console.log(classes[2]);
-  correct += get_acc_score(c_names, classes[2]);
-  console.log(classes[3]);
-  correct += get_acc_score(d_names, classes[3]);
+  res[0] = get_acc_score(a_names, classes[0]);
+  totals[0] = a_names.length;
+  correct += res[0];
+  
+  res[1] = get_acc_score(b_names, classes[1]);
+  totals[1] = b_names.length;
+  correct += res[1];
+
+  res[2] = get_acc_score(b_names, classes[2]);
+  totals[2] = c_names.length;
+  correct += res[2];
+  
+  res[3] = get_acc_score(b_names, classes[3]);
+  totals[3] = c_names.length;
+  correct += res[3];
+  
+  res = res.map((x, i) => {
+    return ((x / totals[i]) * 100).toFixed(2) + "%" + "<br> + x + "/" + totals[i];
+  });
+  
+  $('#op1').html( res[0] );
+  $('#op2').html( res[1] );
+  $('#op3').html( res[2] );
+  $('#op4').html( res[3] );
 
   var total = a_names.length + b_names.length + c_names.length + d_names.length
-
+  
   var acc_str = "Accuracy: " + ((correct / total) * 100).toFixed(2) + "%";
+  
+  $('#op5').html(acc_str);
+
 
   console.log("_______");
   console.log(correct + " " + total + " " + acc_str);
