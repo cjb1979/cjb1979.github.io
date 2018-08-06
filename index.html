@@ -85,10 +85,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            $("#menu-toggle").html("<h2>></h2>");
         }
     }
+    
+     //auto-sidebar
+        
+        //fn declarations
+        
+        $(function(){
+        
+        const get_cookie = (name) => {
+            let name_eq = name + "=";
+            let ca = document.cookie.split(';');
+            let filtered = ca.filter((x) => {
+               return (x.indexOf(name_eq) === 0);
+            });
+            return (filtered.length === 0) ? null : filtered[0].split("=")[1];
+        };
+
+        const set_cookie = (val) => {
+            if (get_cookie("sidebar") === val) return false;
+            document.cookie = "sidebar=" + val;
+            return true;
+         };
+        
+        if (get_cookie('sidebar') === "open"){
+            menu_toggle();
+        }  
+            
+        });
+        
+        
+        //
+        
+        
         
        
     $("#menu-toggle").click(function() {
        menu_toggle();
+       if (get_cookie("sidebar") === "open"){
+           set_cookie('closed');
+       } else {
+           set_cookie('open');
+       }
     });
         
       $(function() {
