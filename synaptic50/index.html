@@ -133,7 +133,7 @@
               </form>
               <p>Use synthesised data?</p>
            <form name="checkcontainer">
-             <input type="checkbox" checked data-toggle="toggle">
+             <input type="checkbox" checked data-toggle="toggle" id="synth_check">
              <small id="exp" class="form-text text-muted">
               Use synthesised or real data? If real data is picked, it will be reproduced below without being pushed through the Markov Model.
              </small>
@@ -143,7 +143,7 @@
                   <input type="range" min="1" max="100" value="100" class="slider" id="sample_slider" oninput="sample_output_i.value = sample_slider.value">
                   <output name="sample_output_n" id="sample_output_i">100</output>
                    <small id="exp" class="form-text text-muted">
-                      How many place name samples the model looks at, as a % of the total.  The more samples, the more realistic.
+                      How many place name samples the model looks at.  The more samples, the more realistic. Set to 1 for all samples.
                    </small>
                </form>
               Number of place names generated:
@@ -267,18 +267,24 @@
             multi_name_class();
          }
          
+         function copy_data(from_id, to_id, amt){
+            if (amt === 1) amt = 1000;
+            $(to_id).text( $(from_id).val().split(" ").slice(0,amt) );
+         }
+         
          
          function get_markov_results(){
-                
+           var synth = document.getElementById("synth_check").value;
+           console.log(synth);
            var power = parseInt(document.getElementById("power_slider").value) / 100;
-         //  var samples = (parseInt(document.getElementById("sample_slider").value) / 100);
+           var samples = (parseInt(document.getElementById("sample_slider").value)); 
            var n = parseInt(document.getElementById("ngram_slider").value);
            var examples = parseInt(document.getElementById("gen_slider").value);
 
            let settings = {
                  n,
                  power,
-                 samples: 50,
+                 samples,
                  examples,
                  as_array: false
            };
