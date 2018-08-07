@@ -269,7 +269,7 @@
          
          function copy_data(from_id, to_id, amt){
             if (amt === 1) amt = 1000;
-            $(to_id).text( $(from_id).val().split(" ").slice(0,amt) );
+            $(to_id).text(  $(from_id).val().split(" ").slice(0,amt) );
          }
          
          
@@ -281,10 +281,11 @@
            var examples = parseInt(document.getElementById("gen_slider").value);
            
            if (!synth){
-              copy_data("#a_s", "#a", samples);
-              copy_data("#b_s", "#b", samples);
-              copy_data("#c_s", "#c", samples);
-              copy_data("#d_s", "#d", samples);
+              console.log("copying data directly, no markov");
+              copy_data("#a", "#a_s", samples);
+              copy_data("#b", "#b_s", samples);
+              copy_data("#c", "#c_s", samples);
+              copy_data("#d", "#d_s", samples);
               return
 
            }
