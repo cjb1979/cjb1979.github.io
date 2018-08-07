@@ -274,13 +274,21 @@
          
          
          function get_markov_results(){
-           var synth = document.getElementById("synth_check").value;
-           console.log(synth);
+           var synth =  $("#synth_check").prop( "checked" );
            var power = parseInt(document.getElementById("power_slider").value) / 100;
            var samples = (parseInt(document.getElementById("sample_slider").value)); 
            var n = parseInt(document.getElementById("ngram_slider").value);
            var examples = parseInt(document.getElementById("gen_slider").value);
+           
+           if (!synth){
+              copy_data("#a_s", "#a", samples);
+              copy_data("#b_s", "#b", samples);
+              copy_data("#c_s", "#c", samples);
+              copy_data("#d_s", "#d", samples);
+              return
 
+           }
+            
            let settings = {
                  n,
                  power,
