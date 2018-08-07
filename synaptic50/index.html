@@ -23,6 +23,14 @@
       <script src="/markov/mk.js"></script>
       <script src="multi_class_nn.js"></script>
       
+      <!-- check box -->
+      
+      <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+      <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+      
+      <!-- end check box -->
+
+      
       <!-- Bootstrap core CSS
          <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
          -->
@@ -154,6 +162,8 @@
                     <input type="checkbox" name="lang" value="DE" id="lang_DE">DE<br>
                   </form>
                   -->
+            
+               <h3>Markov Chain Text Generation Settings</h3>
                <p>
                </p>
                Conservativeness:
@@ -189,7 +199,24 @@
                    </small>
                </form>
                <!--    <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a>  -->
-            
+              <p></p>
+             <h3>Data Settings</h3>
+            <p>Use synthesised data?</p>
+           <form name="checkcontainer">
+             <input type="checkbox" checked data-toggle="toggle">
+             <small id="exp" class="form-text text-muted">
+              Use synthesised or real data?
+             </small>
+            </form>
+              <h3>Neural Network Settings</h3>
+              Epochs:        
+               <form name="slidecontainer">
+                  <input type="range" min="1" max="20" value="5" class="slider" id="epoch_slider" oninput="epoch_output_i.value = epoch_slider.value">
+                  <output name="epoch_output_n" id="epoch_output_i">5</output>
+                   <small id="exp" class="form-text text-muted">
+                      How many times the nn will loop over the data.  Higher values mean more training, but take longer, with a heap of diminishing returns.
+                   </small>
+               </form>
             <p>
             </p>
             <p>
