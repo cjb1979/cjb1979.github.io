@@ -269,7 +269,7 @@
          
          function copy_data(from_id, to_id, amt){
             if (amt === 1) amt = 1000;
-            $(to_id).text(  $(from_id).val().split(" ").slice(0,amt) );
+            $(to_id).text(  $(from_id).val().split(" ").slice(0,amt).join(" ") );
          }
          
          
