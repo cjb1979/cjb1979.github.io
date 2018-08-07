@@ -110,6 +110,7 @@
                </div>
                
               <!--   -->
+              <h3>Data Settings</h3>
                Real data:
                <form name="inputcontainer">
                <div class="row">
@@ -127,9 +128,33 @@
                   </div>
                </div>
                 <small id="exp" class="form-text text-muted">
-                   Pick one or more place name corpuses to enter them into the model.  Or select none for a surprise...
+                   This is the real data that is submitted to the Markov Model.  This data is always used in testing the accuracy of the classifier.
                 </small>
               </form>
+              <p>Use synthesised data?</p>
+           <form name="checkcontainer">
+             <input type="checkbox" checked data-toggle="toggle">
+             <small id="exp" class="form-text text-muted">
+              Use synthesised or real data? If real data is picked, it will be reproduced below without being pushed through the Markov Model.
+             </small>
+            </form>
+            Number Of Samples Input into Markov Model:
+               <form name="slidecontainer">
+                  <input type="range" min="1" max="100" value="100" class="slider" id="sample_slider" oninput="sample_output_i.value = sample_slider.value">
+                  <output name="sample_output_n" id="sample_output_i">100</output>
+                   <small id="exp" class="form-text text-muted">
+                      How many place name samples the model looks at, as a % of the total.  The more samples, the more realistic.
+                   </small>
+               </form>
+              Number of place names generated:
+               <form name="slidecontainer">
+                  <input type="range" min="10" max="1000" value="500" class="slider" id="gen_slider" oninput="gen_output_i.value = gen_slider.value">
+                  <output name="gen_output_n" id="gen_output_i">500</output>
+                   <small id="exp" class="form-text text-muted">
+                      How many place name samples the model generates, that are then fed into the neural network.
+                   </small>
+               </form>
+            
             Synthesised data (using <a href = "/markov/">Markov model</a>):
                <form name="inputcontainer">
                <div class="row">
@@ -182,32 +207,9 @@
                      How many groups of consecutive letters the model looks at.  The higher the number, the more 'realistic' the place names will look.
                   </small>
                </form>
-               % Of Samples:
-               <form name="slidecontainer">
-                  <input type="range" min="1" max="100" value="100" class="slider" id="sample_slider" oninput="sample_output_i.value = sample_slider.value">
-                  <output name="sample_output_n" id="sample_output_i">100</output>
-                   <small id="exp" class="form-text text-muted">
-                      How many place name samples the model looks at, as a % of the total.  The more samples, the more realistic.
-                   </small>
-               </form>
-               Number of place names generated:
-               <form name="slidecontainer">
-                  <input type="range" min="10" max="1000" value="500" class="slider" id="gen_slider" oninput="gen_output_i.value = gen_slider.value">
-                  <output name="gen_output_n" id="gen_output_i">500</output>
-                   <small id="exp" class="form-text text-muted">
-                      How many place name samples the model generates, that are then fed into the neural network.
-                   </small>
-               </form>
                <!--    <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a>  -->
               <p></p>
-             <h3>Data Settings</h3>
-            <p>Use synthesised data?</p>
-           <form name="checkcontainer">
-             <input type="checkbox" checked data-toggle="toggle">
-             <small id="exp" class="form-text text-muted">
-              Use synthesised or real data?
-             </small>
-            </form>
+
               <h3>Neural Network Settings</h3>
               Epochs:        
                <form name="slidecontainer">
@@ -276,7 +278,7 @@
            let settings = {
                  n,
                  power,
-                 samples: 2,
+                 samples: 50,
                  examples,
                  as_array: false
            };
