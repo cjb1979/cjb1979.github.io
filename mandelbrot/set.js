@@ -1,7 +1,7 @@
 const mandelbrot = (() => {
 
 var cvs = document.getElementById("canvas");
-var ctx = canvas.getContext('2d');
+var ctx = cvs.getContext('2d');
 
 var b_cvs = document.createElement('canvas');
 var b_ctx = b_cvs.getContext('2d');
