@@ -182,7 +182,7 @@ function mouseMove(e) {
     /*
     rect.w = (e.pageX - this.offsetLeft) - rect.startX;
     */
-    rect.w = (e.pageX - this.offsetX) - rect.startX;
+    rect.w =  e.offsetX - rect.startX;
 
     rect.h =  rect.w * ratio;
     //(e.pageY - this.offsetTop) - rect.startY;
