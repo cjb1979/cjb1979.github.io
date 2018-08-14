@@ -1,4 +1,4 @@
-const mandelbrot = (() => {
+function mandelbrot() {
 
 var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext('2d');
@@ -37,7 +37,7 @@ y2 = -0.3710433717;
 */
   
 
-//get_mandelbrot(x1, x2, y1, y2);
+get_mandelbrot(x1, x2, y1, y2);
 
 //get_mandelbrot(-0.7648822992569296, -0.7648819943929859, -0.08803101236266861, -0.08803070749872476, 8065);
 
@@ -189,8 +189,4 @@ function init() {
 
 init();
 
-return {
-  start: get_mandelbrot
 };
-
-})();
