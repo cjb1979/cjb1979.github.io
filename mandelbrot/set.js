@@ -61,10 +61,10 @@ function get_iterations(x1, x2){
 
 function get_mandelbrot(_x1, _x2, _y1, _y2, _max_it) {
   clear_canvas();
-  let x1 = (x1 || _x1);
-  let x2 = (x2 || _x2);
-  let y1 = (y1 || _y1);
-  let y2 = (y2 || _y2);
+  let x1 = _x1;
+  let x2 = _x2;
+  let y1 = _y1;
+  let y2 = _y2;
   
   
   let max_it = (_max_it || get_iterations(x1, x2))
