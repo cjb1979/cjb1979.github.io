@@ -1,6 +1,6 @@
-const mandelbrot = ((canvas) => {
+const mandelbrot = (() => {
 
-var cvs = canvas || document.getElementById("canvas");
+var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext('2d');
 
 var b_cvs = document.createElement('canvas');
@@ -37,7 +37,7 @@ y2 = -0.3710433717;
 */
   
 
-get_mandelbrot(x1, x2, y1, y2);
+//get_mandelbrot(x1, x2, y1, y2);
 
 //get_mandelbrot(-0.7648822992569296, -0.7648819943929859, -0.08803101236266861, -0.08803070749872476, 8065);
 
@@ -59,9 +59,15 @@ function get_iterations(x1, x2){
   return Math.floor(Math.log(((5 / Math.abs(x1 - x2)) * 500)) * 200, 0);
 }
 
-function get_mandelbrot(x1, x2, y1, y2, max_it) {
+function get_mandelbrot(_x1, _x2, _y1, _y2, _max_it) {
   clear_canvas();
-  max_it = (max_it || get_iterations(x1, x2))
+  let x1 = (x1 || _x1);
+  let x2 = (x2 || _x2);
+  let y1 = (y1 || _y1);
+  let y2 = (y2 || _y2);
+  
+  
+  let max_it = (_max_it || get_iterations(x1, x2))
   var small_amount = (x2 - x1) / w;
   var py = 0;
   var total = (y1 - y2) * (x1 - x2);
@@ -176,15 +182,15 @@ function mouseMove(e) {
 }
 
 function init() {
-  canvas.addEventListener('mousedown', mouseDown, false);
-  canvas.addEventListener('mouseup', mouseUp, false);
-  canvas.addEventListener('mousemove', mouseMove, false);
+  cvs.addEventListener('mousedown', mouseDown, false);
+  cvs.addEventListener('mouseup', mouseUp, false);
+  cvs.addEventListener('mousemove', mouseMove, false);
 }
 
-//init();
+init();
 
 return {
-  start: init
+  start: get_mandelbrot
 };
 
 })();
