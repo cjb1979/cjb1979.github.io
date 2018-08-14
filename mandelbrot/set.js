@@ -1,4 +1,4 @@
-(function mandelbrot(){
+const mandelbrot = (() => {
 
 var cvs = document.getElementById("canvas");
 var ctx = canvas.getContext('2d');
