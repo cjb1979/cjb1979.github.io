@@ -141,8 +141,14 @@ function draw() {
 }
 
 function mouseDown(e) {
+  /*
   rect.startX = e.pageX - this.offsetLeft;
-  rect.startY = e.pageY - this.offsetTop;
+  rect.startY = e.pageY - this.offsetTop; 
+  */
+  
+  rect.startX = e.offsetX;
+  rect.startY = e.offsetY;
+  
   drag = true;
 }
 
@@ -173,7 +179,11 @@ function mouseUp() {
 function mouseMove(e) {
   if (drag) {
     let ratio = canvas.width / canvas.height;
+    /*
     rect.w = (e.pageX - this.offsetLeft) - rect.startX;
+    */
+    rect.w = (e.pageX - this.offsetX) - rect.startX;
+
     rect.h =  rect.w * ratio;
     //(e.pageY - this.offsetTop) - rect.startY;
     draw();
