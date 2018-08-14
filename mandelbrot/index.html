@@ -1,0 +1,127 @@
+<html lang="en">
+   <!-- Google Tag Manager -->
+   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5BMBQGD');
+   </script>
+   <!-- End Google Tag Manager -->
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>CJ Boyd</title>
+      <!--<link rel="stylesheet" type="text/css" href="/global/custom.css">-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      <script src="set.js"></script>
+      <!-- Bootstrap core CSS
+         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+         -->
+      <!-- Custom styles for this template -->
+      <link href="/global/simple-sidebar.css" rel="stylesheet">
+   </head>
+   <body>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BMBQGD"
+         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      <div id="wrapper">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+         <!-- Loaded in with $().load-->
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="buttonmenu">
+         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+            <h2>></h2>
+         </a>
+      </div>
+      <main role="main" class="container">
+         <div id="page-content-wrapper">
+         <div class="jumbotron">
+            <div class = "row">
+               <div class="container-fluid">
+                  <h1>Mandelbrot Set</h1>
+               </div>
+             </div>
+            </div>
+               Data from which country:
+               <div class = "row">
+                  <div class="col">
+                  
+                  <canvas id="canvas" width="800" height="800"></canvas>
+
+                  </div>
+               </div>
+              
+            </div>
+
+            <!-- /#page-content-wrapper -->
+      </main>
+      </div>
+      <!-- /#wrapper -->
+      <script>
+         
+              //auto-sidebar
+        
+        //fn declarations
+        
+        const get_cookie = (name) => {
+            let name_eq = name + "=";
+            let ca = document.cookie.split(';');
+            let filtered = ca.filter((x) => {
+               return (x.trim().indexOf(name_eq) === 0);
+            });
+            return (filtered.length === 0) ? null : filtered[0].split("=")[1].split(";")[0];
+        };
+        const set_cookie = (val) => {
+            if (get_cookie("sidebar") === val) return false;
+            var d = new Date();
+            d.setTime(d.getTime() + (30*24*60*60*1000)); //30 days
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = "sidebar=" + val + ";" + expires + ";path=/";
+            return true;
+         };
+        
+        
+        //ready...
+        $(function(){
+           if (get_cookie('sidebar') === "open"){
+              menu_toggle();
+           }      
+        });
+        
+        //
+         
+         function menu_toggle(e){
+             $("#wrapper").toggleClass("toggled");
+             if ($("#menu-toggle").text() === ">") {
+                $("#menu-toggle").html("<h2><</h2>");
+             } else {
+                $("#menu-toggle").html("<h2>></h2>");
+             }
+         }
+             
+            
+         $("#menu-toggle").click(function() {
+            menu_toggle();
+         });
+             
+         $(function(){
+             mandelbrot.start();
+         });
+                 
+           $(function() {
+             $("#sidebar-wrapper").load("/global/sidebar.html");
+           });
+                 
+      </script>
+   </body>
+</html>
