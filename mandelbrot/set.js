@@ -19,7 +19,7 @@ y2 -0.3710433717
 var w = 600;
 
 var offset_x = -2.5;
-var offset_y = -1.5;
+var offset_y = -1.75;
 var width = 3.5;
 var height = 3.5;
 
