@@ -1,6 +1,6 @@
-const mandelbrot = (() => {
+const mandelbrot = ((canvas) => {
 
-var cvs = document.getElementById("canvas");
+var cvs = canvas || document.getElementById("canvas");
 var ctx = cvs.getContext('2d');
 
 var b_cvs = document.createElement('canvas');
