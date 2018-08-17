@@ -28,4 +28,4 @@ const get_breadcrumb = (() => {
   return breadcrumb(arr);
 })();
 
-$('#breadcrumb').val(get_breadcrumb());
+$('#breadcrumb').val(get_breadcrumb);
