@@ -67,6 +67,15 @@ const mandelbrot = () => {
     let small_amount = (x2 - x1) / w;
     let total = (y1 - y2) * (x1 - x2);
     let scale_str = order(x2 - x1);
+    let str;
+    if (order(x2 - x1) <= -10){
+        str = `  Iterations: ${get_iterations(x1, x2)}. Scale: ${scale_str}x - Limit reached - reset below`;
+        cvs.removeEventListener('mousedown', mouseDown, false);
+        cvs.removeEventListener('mouseup', mouseUp, false);
+        cvs.removeEventListener('mousemove', mouseMove, false);
+    } else {
+        str = `  Iterations: ${get_iterations(x1, x2)}. Scale: ${scale_str}x`;
+    }
 
     for (var y = y1, py = 0; y <= y2; y += small_amount, py++) {
       for (var x = x1, px = 0; x <= x2; x += small_amount, px++) {
@@ -77,7 +86,6 @@ const mandelbrot = () => {
 
     b_ctx.fillStyle = 'red';
     b_ctx.font = "15px Verdana";
-    let str = `  Iterations: ${get_iterations(x1, x2)}. Scale: ${scale_str}x`;
     b_ctx.fillText(str, 1, 20);
     ctx.drawImage(b_cvs, 0, 0);
   }
