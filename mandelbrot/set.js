@@ -66,15 +66,16 @@ const mandelbrot = () => {
     let max_it = (_max_it || get_iterations(x1, x2));
     let small_amount = (x2 - x1) / w;
     let total = (y1 - y2) * (x1 - x2);
-    let scale_str = order(x2 - x1);
+    let scale = order(x2 - x1);
     let str;
-    if (order(x2 - x1) <= -10){
-        str = `  Iterations: ${get_iterations(x1, x2)}. Scale: ${scale_str}x - Limit reached - reset below`;
+    if (Math.abs(scale) >= 12){
+        console.log('limit reached');
+        str = `  Iterations: ${get_iterations(x1, x2)}. Scale: ${scale}x - Limit reached - reset below`;
         cvs.removeEventListener('mousedown', mouseDown, false);
         cvs.removeEventListener('mouseup', mouseUp, false);
         cvs.removeEventListener('mousemove', mouseMove, false);
     } else {
-        str = `  Iterations: ${get_iterations(x1, x2)}. Scale: ${scale_str}x`;
+        str = `  Iterations: ${get_iterations(x1, x2)}. Scale: ${scale}x`;
     }
 
     for (var y = y1, py = 0; y <= y2; y += small_amount, py++) {
