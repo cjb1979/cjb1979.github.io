@@ -28,4 +28,6 @@ const breadcrumb = (() => {
   return breadcrumb(arr);
 })();
 
-$('#breadcrumb').html(breadcrumb);
+$(function() {
+  $('#breadcrumb').html(breadcrumb);
+});
