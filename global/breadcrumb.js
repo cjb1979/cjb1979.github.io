@@ -23,7 +23,7 @@ const breadcrumb = (() => {
       return i === arr.length - 1 ? link_text : `<a href = "${link_url}">${link_text}</a>`;
     });
 
-    let str = html_arr.join(" > ");
+    let str = html_arr.join(" / ");
 
     return str;
   }
