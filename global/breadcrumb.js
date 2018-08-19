@@ -1,16 +1,16 @@
-const get_breadcrumb = (() => {
+const breadcrumb = (() => {
 
   let path = window.location.pathname;
-
+  const home = '🏠';
   let arr = path.split("/");
-  arr[0] = "Home";
+  arr[0] = home;
   arr = arr.filter(x => x);
 
   const breadcrumb = (arr) => {
 
     let html_arr = arr.map((x, i) => {
       let link_text, link_url, str;
-      if (x === "Home") {
+      if (x === home) {
         link_text = x;
         link_url = "/";
       } else {
@@ -28,4 +28,4 @@ const get_breadcrumb = (() => {
   return breadcrumb(arr);
 })();
 
-$('#breadcrumb').val(get_breadcrumb);
+$('#breadcrumb').html(breadcrumb);
