@@ -109,6 +109,10 @@ const gen = () => {
 
 }
 
-gen();
+$(() => {
 
-$('#btn').click(gen);
+  gen();
+
+  $('#btn').click(gen);
+  
+});
