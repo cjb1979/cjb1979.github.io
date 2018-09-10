@@ -111,4 +111,4 @@ const gen = () => {
 
 gen();
 
-document.getElementById('btn').addEventListener('click', gen, true);
+$('#btn').click(gen);
