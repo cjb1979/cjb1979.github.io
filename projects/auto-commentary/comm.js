@@ -105,7 +105,7 @@ const gen = () => {
 
   const str = phrases.map(pick).join(" ").trim() + ".";
 
-  $('#op').text(str);
+  $('#op').html(str);
 
 }
 
