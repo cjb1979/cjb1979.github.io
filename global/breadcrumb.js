@@ -1,4 +1,6 @@
 const breadcrumb = ((path = window.location.pathname) => {
+  
+  const upper = (text) => text.replace(/^\w/, c => c.toUpperCase());
 
   const home = 'CJ Boyd';
   let arr = path.split("/");
@@ -6,7 +8,6 @@ const breadcrumb = ((path = window.location.pathname) => {
   arr = arr.filter(x => x);
 
   return ((arr) => {
-    const upper = (text) => text.replace(/^\w/, c => c.toUpperCase());
     const html_arr = arr.map((x, i, arr) => {
       const link_text = upper(x);
       const link_url = "/" +  arr.slice(1, i + 1).join("/");
