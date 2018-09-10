@@ -103,9 +103,9 @@ const gen = () => {
 
   const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-  const str = phrases.map(pick).join(" ").trim();
+  const str = phrases.map(pick).join(" ").trim() + ".";
 
-  document.getElementById('op').innerHTML = str + ".";
+  $('#op').text(str);
 
 }
 
