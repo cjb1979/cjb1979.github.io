@@ -1,4 +1,4 @@
-function ascii_solar_system(){
+const ascii_solar_system = (function (){
 
 var moon_store = {
 EARTH:[
@@ -580,4 +580,4 @@ return {
 }
 
 
-}
+})();
