@@ -1,4 +1,4 @@
-const ascii_solar_system = (function (){
+window.ascii_solar_system = (function (){
 
 var moon_store = {
 EARTH:[
