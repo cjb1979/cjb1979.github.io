@@ -1,143 +1,79 @@
-
-<html lang="en">
-
-<head>
-    <!-- https://codepen.io/iprodev/pen/azpWBr -->
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5BMBQGD');</script>
-<!-- End Google Tag Manager -->
-
+<!doctype html>
+<html>
+  <head>
+    <!-- Page setup -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-     
-    <title>CJ Boyd</title>
+    <title>C J BOYD</title>
+    <meta name="description" content="A brief description of your site for search engines">
+    <meta name="author" content="Information about the author here">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="icon" type="image/png" href="favicon.png">
+  
+    <!-- Stylesheets -->
+    <!-- Reset default styles and add support for google fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+   
+    <!-- Custom styles -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
+
+    <!-- Want to add Bootstrap? -->
+    <!-- Visit: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
     
-    <!--<link rel="stylesheet" type="text/css" href="/global/custom.css">-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  </head>
+  
+  <body>
 
-
-    <!-- Bootstrap core CSS
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    -->
-    
-    <!-- Custom styles for this template -->
-    <link href="/global/simple-sidebar.css" rel="stylesheet">
-
-
-</head>
-
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BMBQGD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <!-- Loaded in with $().load-->
+    <header id="header">
+      <img src="logo.png">
+      <h1>Simple Website</h1>
+      
+      <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
+      <ul class="main-menu">
+        <li><a href="#home">home</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>                 
+    </header>
+   
+    <div id="container">
+      <div class="inner">
+        <div id="content"> 
+          
+          <div id="home" class="content-region hide">
+            <h2>Home</h2>
+            <p>
+              This is a simple website template published with Github Pages. <a href="https://github.com/zirafa/simple-website-template">Fork this repository</a> to create your own site!
+            </p>
+          </div>
+          
+          <div id="about" class="content-region hide">
+            <h2>About</h2>
+            <p>
+              Sed tempus urna et pharetra pharetra massa massa ultricies. Porttitor rhoncus dolor purus non enim praesent. Id aliquet risus feugiat in ante metus dictum. 
+            </p>
+          </div>
+          
+          <div id="contact" class="content-region hide">
+            <h2>Contact</h2>
+            <p>
+              Pellentesque nec nam aliquam sem et tortor consequat. Quisque sagittis purus sit amet volutpat consequat. Magna eget est lorem ipsum dolor. 
+            </p>
+          </div>
+          
         </div>
-       
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="buttonmenu"><a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><h2>></h2></a></div>
-        <div id="page-content-wrapper">
-          <main role="main" class="container">
-
-            <div class="container-fluid">
-                <h1>CJ Boyd</h1>
-                <p>Digital Marketer, JS programmer, AdWords automater, amateur web designer & AI enthusiast</p>
-                <p>Check out some of my AI-inspired projects <a href="/projects">here</a>.</p>
-              <!--  <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a> -->
-            
-                <p>I'm designing this website from the ground up.</p>
-               
-                <img src="/img/cjb.jpg" class="img-fluid" alt="CJ Boyd">
-                
-                <p></p>
-                <p></p>
-            </div>
-        </div>
-
-        <!-- /#page-content-wrapper -->
- </div>
+      </div>
     </div>
-    <!-- /#wrapper -->
 
-    <script>       
-        
-    function menu_toggle(e){
-        $("#wrapper").toggleClass("toggled");
-        if ($("#menu-toggle").text() === ">") {
-           $("#menu-toggle").html("<h2><</h2>");
-        } else {
-           $("#menu-toggle").html("<h2>></h2>");
-        }
-    }
+    <footer>  
+      Footer region
+    </footer>
     
-     //auto-sidebar
-        
-        //fn declarations
-        
-        const get_cookie = (name) => {
-            let name_eq = name + "=";
-            let ca = document.cookie.split(';');
-            let filtered = ca.filter((x) => {
-               return (x.trim().indexOf(name_eq) === 0);
-            });
-            return (filtered.length === 0) ? null : filtered[0].split("=")[1].split(";")[0];
-        };
-
-        const set_cookie = (val) => {
-            if (get_cookie("sidebar") === val) return false;
-            var d = new Date();
-            d.setTime(d.getTime() + (30*24*60*60*1000)); //30 days
-            var expires = "expires="+ d.toUTCString();
-            document.cookie = "sidebar=" + val + ";" + expires + ";path=/";
-            return true;
-         };
-        
-        
-        //ready...
-        $(function(){
-           if (get_cookie('sidebar') === "open"){
-              menu_toggle();
-           }      
-        });
-
-        
-        //
-        
-        
-        
-       
-    $("#menu-toggle").click(function() {
-       menu_toggle();
-       if (get_cookie("sidebar") === "open"){
-           set_cookie('closed');
-       } else {
-           set_cookie('open');
-       }
-    });
-        
-      $(function() {
-        $("#sidebar-wrapper").load("/global/sidebar.html");
-      });
-    </script>
-
-</body>
-
+    <!-- Load additional JS scripts here -->
+    <script type="text/javascript" src="script.js"></script>
+    
+  </body>
 </html>
