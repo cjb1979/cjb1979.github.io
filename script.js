@@ -33,7 +33,7 @@
     const $contact_div = $('#contact');  
     let currentHTML = $contact_div.html();
     const em = ['hi','@','cj','-','boyd','.','com'].join('');
-    const computed = currentText.replace('email_address', em);
+    const computed = currentHTML.replace('email_address', em);
     $contact_div.html(computed);
   });
 })(jQuery);
