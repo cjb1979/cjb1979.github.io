@@ -27,3 +27,13 @@
   });
   
 })(jQuery);
+
+(function ($) {
+  $(document).ready(function() {
+    const $contact_div = $('#contact');  
+    let currentText = $contact_div.text();
+    const em = ['hi','@','cj','-','boyd','.','com'].join('');
+    const computed = currentText.replace('email_address', em);
+    $contact_div.text(computed);
+  });
+})(jQuery);
