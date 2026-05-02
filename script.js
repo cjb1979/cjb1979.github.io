@@ -31,9 +31,9 @@
 (function ($) {
   $(document).ready(function() {
     const $contact_div = $('#contact');  
-    let currentText = $contact_div.text();
+    let currentHTML = $contact_div.html();
     const em = ['hi','@','cj','-','boyd','.','com'].join('');
     const computed = currentText.replace('email_address', em);
-    $contact_div.text(computed);
+    $contact_div.html(computed);
   });
 })(jQuery);
