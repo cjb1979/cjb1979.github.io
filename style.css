@@ -107,7 +107,7 @@ blockquote p:last-child {
   background-repeat: no-repeat;
   
   /* Transition for the fade effect */
-  transition: background-image 1s ease-in-out; 
+  transition: background-image 3s ease-in-out; 
 }
 
 /* Ensure the body and other containers don't have solid backgrounds 
