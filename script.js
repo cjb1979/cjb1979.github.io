@@ -62,7 +62,7 @@ const startSlideshow = () => {
   setInterval(() => {
     currentIndex = (currentIndex + 1) % images.length;
     container.style.backgroundImage = `url(${images[currentIndex]})`;
-  }, 3000); // Change image every 3 seconds (1s is the fade)
+  }, 5000); // Change image every 3 seconds (1s is the fade)
 };
 
 // 3. Execution
