@@ -89,21 +89,41 @@ blockquote p:last-child {
 /**
  * Layout styles
  */
+/**
+ * Layout styles
+ */
 #slideshow {
+  /* Pin to the background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Pushes it behind all other content */
+  
   width: 100vw;
   height: 100vh;
+  
   background-size: cover;
   background-position: center;
-  /* This creates the 1-second fade effect */
+  background-repeat: no-repeat;
+  
+  /* Transition for the fade effect */
   transition: background-image 1s ease-in-out; 
 }
-/* Full size background image */
-html, #container, .inner { background-color:transparent;}
+
+/* Ensure the body and other containers don't have solid backgrounds 
+   that would block the slideshow from view */
+html, body {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  max-width:800px;
-  margin:25px auto;
+  max-width: 800px;
+  margin: 25px auto;
+  min-height: 100vh; /* Ensures body covers the screen */
 }
+
 header, #content, footer { 
   background: rgba(0,0,0,.3); 
   padding:25px;
