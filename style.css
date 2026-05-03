@@ -89,13 +89,17 @@ blockquote p:last-child {
 /**
  * Layout styles
  */
-
+#slideshow {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  /* This creates the 1-second fade effect */
+  transition: background-image 1s ease-in-out; 
+}
 /* Full size background image */
 html, #container, .inner { background-color:transparent;}
-html {
-  background:url(background.jpg) center center no-repeat fixed;
-  background-size:cover;
-}
+
 body {
   max-width:800px;
   margin:25px auto;
