@@ -37,3 +37,38 @@
     $contact_div.html(computed);
   });
 })(jQuery);
+
+const container = document.getElementById('slideshow');
+const images = JSON.parse(container.dataset.images);
+let currentIndex = 0;
+
+// 1. Preload Function
+const preloadImages = (srcs) => {
+  const promises = srcs.map((src) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = resolve;
+      img.onerror = reject;
+    });
+  });
+  return Promise.all(promises);
+};
+
+// 2. Start the Cycle
+const startSlideshow = () => {
+  container.style.backgroundImage = `url(${images[currentIndex]})`;
+  
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % images.length;
+    container.style.backgroundImage = `url(${images[currentIndex]})`;
+  }, 3000); // Change image every 3 seconds (1s is the fade)
+};
+
+// 3. Execution
+preloadImages(images)
+  .then(() => {
+    console.log("All images loaded. Starting...");
+    startSlideshow();
+  })
+  .catch(err => console.error("Failed to load images", err));
